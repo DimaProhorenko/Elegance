@@ -1,0 +1,16 @@
+@use './vars' as v;
+
+:root,
+[data-ek-theme='light'] {
+
+    @each $color, $value in v.$colors {
+        --#{v.$prefix}#{$color}: #{$value};
+    }
+
+    @each $color, $value in v.$theme-colors {
+        --#{v.$prefix}#{$color}: #{$value};
+    }
+
+    --#{v.$prefix}body-color: #{v.$body-color};
+    --#{v.$prefix}body-bg: #{v.$body-bg};
+}

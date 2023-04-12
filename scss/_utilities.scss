@@ -1,0 +1,221 @@
+@use './vars' as v;
+
+$utilities: ();
+
+$utilities: map-merge(
+    (
+        "align": (
+            property: vertical-align,
+            class: align,
+            values: baseline top middle bottom text-bottom text-top
+        ),
+        "opacity": (
+            property: opacity,
+            class: opacity,
+            values: (
+                0: 0,
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "display": (
+            property: display,
+            class: d,
+            values: block inline-block inline flex inline-flex none
+        ),
+        "position": (
+            property: position,
+            values: static relative absolute fixed sticky
+        ),
+        "width": (
+            property: width,
+            class: w,
+            values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "max-width": (
+            property: max-width,
+            class: mw,
+            values: (
+                100: 100%
+            )
+        ),
+        "height": (
+            property: height,
+            class: h,
+            values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "max-height": (
+            property: max-height,
+            class: mh,
+            values: (
+                100: 100%
+            )
+        ),
+        "flex": (
+            property: flex,
+            values: (flex: 1 1 auto)
+        ),
+        "flex-direction": (
+            property: flex-direction,
+            class: flex,
+            values: row row-reverse column column-reverse
+        ),
+        "flex-grow": (
+            property: flex-grow,
+            class: flex,
+            values: (
+                grow-0: 0,
+                grow-1: 1,
+            )
+        ),
+        "flex-shrink": (
+            property: flex-shrink,
+            class: flex,
+            values: (
+                shrink-0: 0,
+                shrink-1: 1,
+            )
+        ),
+        "flex-wrap": (
+            property: flex-wrap,
+            class: flex,
+            values: (
+                wrap: wrap,
+                nowrap: nowrap,
+            )
+        ),
+        "justify-content": (
+            property: justify-content,
+            class: jc,
+            values: (
+                start: flex-start,
+                end: flex-end,
+                center: center,
+                between: space-between,
+                around: space-around,
+                evenly: space-evenly
+
+            )
+        ),
+        "align-items": (
+            property: align-items,
+            class: ai,
+            values: (
+                start: flex-start,
+                end: flex-end,
+                center: center,
+                baseline: baseline,
+                stretch: stretch
+
+            )
+        ),
+        "align-self": (
+            property: align-self,
+            class: align-self,
+            values: (
+                auto: auto,
+                start: flex-start,
+                end: flex-end,
+                center: center,
+                baseline: baseline,
+                stretch: stretch
+            )
+        ),
+        "order": (
+            property: order,
+            class: order,
+            values: (
+                first: -1,
+                0: 0,
+                1: 1,
+                2: 2,
+                3: 3,
+                4: 4,
+                5: 5,
+                last: 6
+            )
+        ),
+        "margin": (
+            property: margin,
+            class: m,
+            values: v.$spacers
+        ),
+        "margin-y": (
+            property: margin-block,
+            class: my,
+            values: v.$spacers
+        ),
+        "margin-x": (
+            property: margin-inline,
+            class: mx,
+            values: v.$spacers
+        ),
+        "margin-top": (
+            property: margin-block-start,
+            class: mt,
+            values: v.$spacers
+        ),
+        "margin-bot": (
+            property: margin-block-end,
+            class: mb,
+            values: v.$spacers
+        ),
+        "margin-left": (
+            property: margin-inline-start,
+            class: ml,
+            values: v.$spacers
+        ),
+        "margin-right": (
+            property: margin-inline-end,
+            class: mr,
+            values: v.$spacers
+        ),
+        "padding": (
+            property: padding,
+            class: p,
+            values: v.$spacers
+        ),
+        "padding-y": (
+            property: padding-block,
+            class: py,
+            values: v.$spacers
+        ),
+        "padding-x": (
+            property: padding-inline,
+            class: px,
+            values: v.$spacers
+        ),
+        "padding-top": (
+            property: padding-block-start,
+            class: pt,
+            values: v.$spacers
+        ),
+        "padding-bot": (
+            property: padding-block-end,
+            class: pb,
+            values: v.$spacers
+        ),
+        "padding-left": (
+            property: padding-inline-start,
+            class: pl,
+            values: v.$spacers
+        ),
+        "padding-right": (
+            property: padding-inline-end,
+            class: pr,
+            values: v.$spacers
+        )
+    ),
+$utilities);

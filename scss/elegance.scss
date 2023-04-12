@@ -1,0 +1,19 @@
+@use './vars';
+@use './functions';
+@use './root';
+@use './utils-ready';
+
+
+// $utilities: () !default;
+
+// $utilities: map-merge(
+//     (
+//         "align": (
+//             property: vertical-align,
+//             class: align,
+//             values: baseline top middle bottom text-bottom text-top
+//         ),
+//     ),
+// $utilities);
+
+// @debug $utilities;

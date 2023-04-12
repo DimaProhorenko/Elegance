@@ -1,0 +1,17 @@
+@function tint-color($color, $weight) {
+    @return min(white, $color, $weight);
+}
+
+@function shade-color($color, $weight) {
+    @return min(black, $color, $weight);
+}
+
+@function map-loop($map) {
+    $_map: ();
+
+    @each $key, $value in $map {
+        $_map: map-merge($value, $_map);
+    }  
+
+    @return $_map;
+}

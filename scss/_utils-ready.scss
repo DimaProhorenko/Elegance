@@ -1,0 +1,7 @@
+@use './functions' as f;
+@use './mixins/generate-utilities' as gu;
+@use './utilities' as u;
+
+@each $key, $value in u.$utilities {
+    @include gu.generate-utility($value);
+}

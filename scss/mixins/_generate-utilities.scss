@@ -1,0 +1,18 @@
+@mixin generate-utility($utility, $infix: '-') {  
+    $values: map-get($utility, values);
+
+    @if type-of($values) == 'string' or type-of(nth($values, 1)) !='list' {
+        $values: zip($values, $values);
+    }
+
+    $property: map-get($utility, property);
+
+    $class: if(map-has-key($utility, class), map-get($utility, class), '');
+    $infix: if(map-has-key($utility, class), '-', '');
+    @each $key, $value in $values {
+        .#{$class + $infix + $key} {
+            #{$property}: $value;
+        }
+    }
+
+}
