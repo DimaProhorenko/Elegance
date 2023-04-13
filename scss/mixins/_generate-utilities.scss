@@ -1,3 +1,5 @@
+@use '../vars' as v;
+
 @mixin generate-utility($utility, $infix: '-') {  
     $values: map-get($utility, values);
 
@@ -9,9 +11,23 @@
 
     $class: if(map-has-key($utility, class), map-get($utility, class), '');
     $infix: if(map-has-key($utility, class), '-', '');
+    $css-var: if(map-has-key($utility, css-var), map-get($utility, class), null);
+    $local-vars: map-get($utility, local-vars);
+    
     @each $key, $value in $values {
-        .#{$class + $infix + $key} {
-            #{$property}: $value;
+        @if $css-var {
+            .#{$class + $infix + $key} {
+                --#{v.$prefix + $class}: #{$value};
+            }
+        } @else {
+            .#{$class + $infix + $key} {
+                @if $local-vars {
+                    @each $local-var, $variable in $local-vars {
+                        --#{v.$prefix + $local-var}: #{$variable};
+                    }
+                }
+                #{$property}: $value;
+            }
         }
     }
 

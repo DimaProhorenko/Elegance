@@ -247,6 +247,24 @@ $utilities: map-merge(
             class: text,
             values: uppercase lowercase capitalize
         ),
+        'color': (
+            property: color,
+            class: text,
+            values: map-merge(v.$theme-colors, v.$text-colors),
+            local-vars: (
+                'text-opacity': 1
+            )
+        ),
+        'text-opacity': (
+            css-var: true,
+            class: text-opacity,
+            values: (
+                25: .25,
+                50: .50,
+                75: .75,
+                1: 1,
+            )
+        ),
         'bg-opacity': (
             property: opacity,
             class: bg-opacity,

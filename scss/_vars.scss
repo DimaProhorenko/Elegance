@@ -1,3 +1,5 @@
+@use './functions' as f;
+
 // Variables
 
 // Should follow the "$component-state-property-size" formula
@@ -18,19 +20,19 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 // Color variables
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
+$violet:  #7B2CBF !default;
+$indigo:  #9D4EDD !default;
+$purple:  #C77DFF !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
+$red:     #f4134e !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
+$yellow:  #f9c624 !default;
+$green:   #24af27 !default;
+$teal:    #6ab441 !default;
 $cyan:    #0dcaf0 !default;
 
 $colors: (
-  "blue":       $blue,
+  "violet":     $violet,
   "indigo":     $indigo,
   "purple":     $purple,
   "pink":       $pink,
@@ -48,14 +50,15 @@ $colors: (
 
 
 // Theme colors
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$primary:       f.toRgba($violet, text-opacity) !default;
+@debug type-of($primary);
+$secondary:     f.toRgba($indigo, text-opacity) !default;
+$success:       f.toRgba($green, text-opacity)  !default;
+$info:          f.toRgba($teal, text-opacity) !default;
+$warning:       f.toRgba($yellow, text-opacity) !default;
+$danger:        f.toRgba($red, text-opacity) !default;
+$light:         f.toRgba($gray-100, text-opacity) !default;
+$dark:          f.toRgba($gray-900, text-opacity) !default;
 
 $theme-colors: (
     'primary': $primary,
@@ -72,6 +75,22 @@ $min-contrast-ration: 4.5 !default;
 
 $clr-contrast-dark: $black !default;
 $clr-contrast-light: $white !default;
+
+$text-primary-color: $primary !default;
+$text-primary-emphasis-color: f.shade-color($violet, 40) !default;
+$text-secondary-color: #10002B !default;
+$text-secondary-emphasis-color: f.shade-color($text-secondary-color, 40) !default;
+$text-light: $gray-600;
+$text-lighter: $gray-200;
+
+$text-colors: (
+    primary: $primary,
+    primary-emphasis: f.toRgba($text-primary-emphasis-color, text-opacity),
+    secondary: f.toRgba($text-secondary-color, text-opacity),
+    secondary-emphasis: f.toRgba($text-secondary-emphasis-color, text-opacity),
+    light: f.toRgba($text-light, text-opacity),
+    lighter: f.toRgba($text-lighter, text-opacity) 
+) !default;
 
 
 // Body
