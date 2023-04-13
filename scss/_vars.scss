@@ -78,13 +78,11 @@ $clr-contrast-light: $white !default;
 $body-color:                $gray-900 !default;
 $body-bg:                   $white !default;
 
-$body-secondary-color:      rgba($body-color, .75) !default;
-$body-secondary-bg:         $gray-200 !default;
-
-$body-tertiary-color:       rgba($body-color, .5) !default;
-$body-tertiary-bg:          $gray-100 !default;
-
 $body-emphasis-color:       $black !default;
+
+
+// Gradient
+$gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 
 
 // Grid
@@ -101,11 +99,56 @@ $grid-columns:                12 !default;
 $grid-gutter-width:           1.5rem !default;
 
 
+$spacer: 1rem;
+
 $spacers: (
     0: 0,
-    1: .5rem,
-    2: 1rem,
-    3: 1.5rem,
-    4: 2rem,
-    5: 2.5rem,
-)
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+);
+
+
+// Typography
+$ff-base: 'EK-Poppins', Arial, sans-serif !default;
+
+// Font sizes
+$fs-base: 1rem;
+$fs-sm: $fs-base * .875 !default;
+$fs-lg: $fs-base * 1.25 !default;
+
+$font-sizes: (
+    sm: $fs-sm,
+    md: $fs-base * 1.1,
+    lg: $fs-lg,
+    xl: $fs-lg * 1.35
+) !default;
+
+$fw-light: 300 !default;
+$fw-normal:400 !default;
+$fw-medium: 500 !default;
+$fw-semibold: 600 !default;
+$fw-bold: 700 !default;
+
+$font-weight: (
+    300: $fw-light,
+    400: $fw-normal,
+    500: $fw-medium,
+    600: $fw-semibold,
+    700: $fw-bold
+) !default;
+
+$fw-base: $fw-medium !default;
+
+$line-height-base: 1.5 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+
+// Headings
+
+$h-mb: $spacer * .5;
+$h-color: null !default;
+$h-fw: $fw-semibold !default;
+$h-lineheight: 1.2 !default;

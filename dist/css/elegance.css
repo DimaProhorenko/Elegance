@@ -1,3 +1,28 @@
+@font-face {
+  font-family: "EK-Poppins";
+  font-weight: 300;
+  src: url("../assets/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EK-Poppins";
+  font-weight: 400;
+  src: url("../assets/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EK-Poppins";
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EK-Poppins";
+  font-weight: 600;
+  src: url("../assets/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "EK-Poppins";
+  font-weight: 700;
+  src: url("../assets/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
 :root,
 [data-ek-theme=light] {
   --ek-blue: #0d6efd;
@@ -26,6 +51,69 @@
   --ek-body-bg: #fff;
 }
 
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--ek-body-bg);
+  color: var(--ek-body-color);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 .align-baseline {
   vertical-align: baseline;
 }
@@ -303,23 +391,23 @@
 }
 
 .m-1 {
-  margin: 0.5rem;
+  margin: 0.25rem;
 }
 
 .m-2 {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .m-3 {
-  margin: 1.5rem;
+  margin: 1rem;
 }
 
 .m-4 {
-  margin: 2rem;
+  margin: 1.5rem;
 }
 
 .m-5 {
-  margin: 2.5rem;
+  margin: 3rem;
 }
 
 .my-0 {
@@ -327,23 +415,23 @@
 }
 
 .my-1 {
-  margin-block: 0.5rem;
+  margin-block: 0.25rem;
 }
 
 .my-2 {
-  margin-block: 1rem;
+  margin-block: 0.5rem;
 }
 
 .my-3 {
-  margin-block: 1.5rem;
+  margin-block: 1rem;
 }
 
 .my-4 {
-  margin-block: 2rem;
+  margin-block: 1.5rem;
 }
 
 .my-5 {
-  margin-block: 2.5rem;
+  margin-block: 3rem;
 }
 
 .mx-0 {
@@ -351,23 +439,23 @@
 }
 
 .mx-1 {
-  margin-inline: 0.5rem;
+  margin-inline: 0.25rem;
 }
 
 .mx-2 {
-  margin-inline: 1rem;
+  margin-inline: 0.5rem;
 }
 
 .mx-3 {
-  margin-inline: 1.5rem;
+  margin-inline: 1rem;
 }
 
 .mx-4 {
-  margin-inline: 2rem;
+  margin-inline: 1.5rem;
 }
 
 .mx-5 {
-  margin-inline: 2.5rem;
+  margin-inline: 3rem;
 }
 
 .mt-0 {
@@ -375,23 +463,23 @@
 }
 
 .mt-1 {
-  margin-block-start: 0.5rem;
+  margin-block-start: 0.25rem;
 }
 
 .mt-2 {
-  margin-block-start: 1rem;
+  margin-block-start: 0.5rem;
 }
 
 .mt-3 {
-  margin-block-start: 1.5rem;
+  margin-block-start: 1rem;
 }
 
 .mt-4 {
-  margin-block-start: 2rem;
+  margin-block-start: 1.5rem;
 }
 
 .mt-5 {
-  margin-block-start: 2.5rem;
+  margin-block-start: 3rem;
 }
 
 .mb-0 {
@@ -399,23 +487,23 @@
 }
 
 .mb-1 {
-  margin-block-end: 0.5rem;
+  margin-block-end: 0.25rem;
 }
 
 .mb-2 {
-  margin-block-end: 1rem;
+  margin-block-end: 0.5rem;
 }
 
 .mb-3 {
-  margin-block-end: 1.5rem;
+  margin-block-end: 1rem;
 }
 
 .mb-4 {
-  margin-block-end: 2rem;
+  margin-block-end: 1.5rem;
 }
 
 .mb-5 {
-  margin-block-end: 2.5rem;
+  margin-block-end: 3rem;
 }
 
 .ml-0 {
@@ -423,23 +511,23 @@
 }
 
 .ml-1 {
-  margin-inline-start: 0.5rem;
+  margin-inline-start: 0.25rem;
 }
 
 .ml-2 {
-  margin-inline-start: 1rem;
+  margin-inline-start: 0.5rem;
 }
 
 .ml-3 {
-  margin-inline-start: 1.5rem;
+  margin-inline-start: 1rem;
 }
 
 .ml-4 {
-  margin-inline-start: 2rem;
+  margin-inline-start: 1.5rem;
 }
 
 .ml-5 {
-  margin-inline-start: 2.5rem;
+  margin-inline-start: 3rem;
 }
 
 .mr-0 {
@@ -447,23 +535,23 @@
 }
 
 .mr-1 {
-  margin-inline-end: 0.5rem;
+  margin-inline-end: 0.25rem;
 }
 
 .mr-2 {
-  margin-inline-end: 1rem;
+  margin-inline-end: 0.5rem;
 }
 
 .mr-3 {
-  margin-inline-end: 1.5rem;
+  margin-inline-end: 1rem;
 }
 
 .mr-4 {
-  margin-inline-end: 2rem;
+  margin-inline-end: 1.5rem;
 }
 
 .mr-5 {
-  margin-inline-end: 2.5rem;
+  margin-inline-end: 3rem;
 }
 
 .p-0 {
@@ -471,23 +559,23 @@
 }
 
 .p-1 {
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .p-2 {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .p-3 {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .p-4 {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .p-5 {
-  padding: 2.5rem;
+  padding: 3rem;
 }
 
 .py-0 {
@@ -495,23 +583,23 @@
 }
 
 .py-1 {
-  padding-block: 0.5rem;
+  padding-block: 0.25rem;
 }
 
 .py-2 {
-  padding-block: 1rem;
+  padding-block: 0.5rem;
 }
 
 .py-3 {
-  padding-block: 1.5rem;
+  padding-block: 1rem;
 }
 
 .py-4 {
-  padding-block: 2rem;
+  padding-block: 1.5rem;
 }
 
 .py-5 {
-  padding-block: 2.5rem;
+  padding-block: 3rem;
 }
 
 .px-0 {
@@ -519,23 +607,23 @@
 }
 
 .px-1 {
-  padding-inline: 0.5rem;
+  padding-inline: 0.25rem;
 }
 
 .px-2 {
-  padding-inline: 1rem;
+  padding-inline: 0.5rem;
 }
 
 .px-3 {
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 }
 
 .px-4 {
-  padding-inline: 2rem;
+  padding-inline: 1.5rem;
 }
 
 .px-5 {
-  padding-inline: 2.5rem;
+  padding-inline: 3rem;
 }
 
 .pt-0 {
@@ -543,23 +631,23 @@
 }
 
 .pt-1 {
-  padding-block-start: 0.5rem;
+  padding-block-start: 0.25rem;
 }
 
 .pt-2 {
-  padding-block-start: 1rem;
+  padding-block-start: 0.5rem;
 }
 
 .pt-3 {
-  padding-block-start: 1.5rem;
+  padding-block-start: 1rem;
 }
 
 .pt-4 {
-  padding-block-start: 2rem;
+  padding-block-start: 1.5rem;
 }
 
 .pt-5 {
-  padding-block-start: 2.5rem;
+  padding-block-start: 3rem;
 }
 
 .pb-0 {
@@ -567,23 +655,23 @@
 }
 
 .pb-1 {
-  padding-block-end: 0.5rem;
+  padding-block-end: 0.25rem;
 }
 
 .pb-2 {
-  padding-block-end: 1rem;
+  padding-block-end: 0.5rem;
 }
 
 .pb-3 {
-  padding-block-end: 1.5rem;
+  padding-block-end: 1rem;
 }
 
 .pb-4 {
-  padding-block-end: 2rem;
+  padding-block-end: 1.5rem;
 }
 
 .pb-5 {
-  padding-block-end: 2.5rem;
+  padding-block-end: 3rem;
 }
 
 .pl-0 {
@@ -591,23 +679,23 @@
 }
 
 .pl-1 {
-  padding-inline-start: 0.5rem;
+  padding-inline-start: 0.25rem;
 }
 
 .pl-2 {
-  padding-inline-start: 1rem;
+  padding-inline-start: 0.5rem;
 }
 
 .pl-3 {
-  padding-inline-start: 1.5rem;
+  padding-inline-start: 1rem;
 }
 
 .pl-4 {
-  padding-inline-start: 2rem;
+  padding-inline-start: 1.5rem;
 }
 
 .pl-5 {
-  padding-inline-start: 2.5rem;
+  padding-inline-start: 3rem;
 }
 
 .pr-0 {
@@ -615,21 +703,129 @@
 }
 
 .pr-1 {
-  padding-inline-end: 0.5rem;
+  padding-inline-end: 0.25rem;
 }
 
 .pr-2 {
-  padding-inline-end: 1rem;
+  padding-inline-end: 0.5rem;
 }
 
 .pr-3 {
-  padding-inline-end: 1.5rem;
+  padding-inline-end: 1rem;
 }
 
 .pr-4 {
-  padding-inline-end: 2rem;
+  padding-inline-end: 1.5rem;
 }
 
 .pr-5 {
-  padding-inline-end: 2.5rem;
+  padding-inline-end: 3rem;
+}
+
+.fs-sm {
+  font-size: 0.875rem;
+}
+
+.fs-md {
+  font-size: 1.1rem;
+}
+
+.fs-lg {
+  font-size: 1.25rem;
+}
+
+.fs-xl {
+  font-size: 1.6875rem;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fst-normal {
+  font-style: normal;
+}
+
+.fst-italic {
+  font-style: italic;
+}
+
+.fst-oblique {
+  font-style: oblique;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.none {
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.bg-opacity-10 {
+  opacity: 0.1;
+}
+
+.bg-opacity-25 {
+  opacity: 0.25;
+}
+
+.bg-opacity-50 {
+  opacity: 0.5;
+}
+
+.bg-opacity-75 {
+  opacity: 0.75;
+}
+
+.bg-opacity-100 {
+  opacity: 1;
+}
+
+.bg-gradient {
+  background: var(--ek-gradient);
 }

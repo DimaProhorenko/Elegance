@@ -216,6 +216,52 @@ $utilities: map-merge(
             property: padding-inline-end,
             class: pr,
             values: v.$spacers
+        ),
+        "font-size": (
+            property: font-size,
+            class: fs,
+            values: v.$font-sizes
+        ),
+        'font-weight': (
+            property: font-weight,
+            class: fw,
+            values: v.$font-weight
+        ),
+        'font-style': (
+            property: font-style,
+            class: fst,
+            values: normal italic oblique
+
+        ),
+        'text-align': (
+            property: text-align,
+            class: text,
+            values: left center right
+        ),
+        'text-decoration': (
+            property: text-decoration,
+            values: none underline line-through
+        ),
+        'text-transform': (
+            property: text-transform,
+            class: text,
+            values: uppercase lowercase capitalize
+        ),
+        'bg-opacity': (
+            property: opacity,
+            class: bg-opacity,
+            values: (
+                10: .1,
+                25: .25,
+                50: .5,
+                75: .75,
+                100: 1
+            )
+        ),
+        'gradient': (
+            property: background,
+            class: bg,
+            values: (gradient: var(--#{v.$prefix}gradient))
         )
     ),
 $utilities);
