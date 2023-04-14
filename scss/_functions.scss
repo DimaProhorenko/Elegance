@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 $prefix: ek-;
 
 @function tint-color($color, $weight) {
@@ -18,26 +20,42 @@ $prefix: ek-;
     @return $_map;
 }
 
+@function useCssVar($identifier, $clr, $target) {
+    @return var(--#{$prefix + $identifier}, $clr);
+}
+
 
 @function toRgba($clr, $cssVar) {
     @return rgba($clr, var(--#{$prefix + $cssVar}));
+
 }
 
-@function rgba-css-var($clr, $target: text) {
+@function rgba-css-var($clr, $target: text, $useVar: false, $identifier: null) {
+    
+    @if ($useVar) {
+        @return rgba(useCssVar($identifier, $clr, $target), var(--#{$prefix + $target + -opacity}));
+    }
+    
     @return rgba($clr, var(--#{$prefix + $target + -opacity}));
 }
 
 @function map-loop($map, $callback, $args...) {
     $_map: ();
     $_args: ();
+    $var: null;
+    $useVars: if(list.index($args, useVars), true, null);
+    @debug $useVars;
     // $cb-val: if(map-get($args, text), text, null);
     @each $arg in $args {
         $var: if($arg == text, text, bg);
         $_args: append($_args, $var);
     }
+    $_args: append($_args, $useVars);
+    @debug $_args;
 
     @each $key, $value in $map {
-        $_map: map-merge($_map, ($key: call(get-function($callback), $value, $_args...)))
+        $identifier: if($useVars, $key, null);
+        $_map: map-merge($_map, ($key: call(get-function($callback), $value, $var, $useVars, $identifier)))
     }
 
     // @debug $_map;

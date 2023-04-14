@@ -5,14 +5,21 @@ $body-bg-dark: #10002B;
 $body-color: #fafafa;
 
 $primary-dark: f.tint-color(v.$primary, 80);
+$secondary:     v.$indigo !default;
+$success:       v.$green  !default;
+$info:          v.$teal !default;
+$warning:       v.$yellow !default;
+$danger:        green !default;
+$light:         v.$gray-900 !default;
+$dark:          v.$gray-100 !default;
 
 $theme-colors-dark: (
     'primary': $primary-dark,
-    'secondary': v.$secondary,
-    'success': v.$success,
-    'info': v.$info,
-    'warning': v.$warning,
-    'danger': v.$danger,
-    'light': v.$light,
-    'dark': v.$dark
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark
 ) !default; 

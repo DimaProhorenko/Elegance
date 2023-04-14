@@ -58,9 +58,9 @@
   --ek-success: #24af27;
   --ek-info: #6ab441;
   --ek-warning: #f4cd11;
-  --ek-danger: #fd0737;
-  --ek-light: #f8f9fa;
-  --ek-dark: #212529;
+  --ek-danger: green;
+  --ek-light: #212529;
+  --ek-dark: #f8f9fa;
   --ek-body-bg: #10002B;
   --ek-body-color: #fafafa;
 }
@@ -823,62 +823,62 @@ select {
 
 .text-primary {
   --ek-text-opacity: 1;
-  color: rgba(0, 79, 237, var(--ek-text-opacity));
+  color: rgba(var(--ek-primary, #004fed), var(--ek-bg-opacity));
 }
 
 .text-secondary {
   --ek-text-opacity: 1;
-  color: rgba(116, 32, 185, var(--ek-text-opacity));
+  color: rgba(var(--ek-secondary, #7420b9), var(--ek-bg-opacity));
 }
 
 .text-success {
   --ek-text-opacity: 1;
-  color: rgba(36, 175, 39, var(--ek-text-opacity));
+  color: rgba(var(--ek-success, #24af27), var(--ek-bg-opacity));
 }
 
 .text-info {
   --ek-text-opacity: 1;
-  color: rgba(106, 180, 65, var(--ek-text-opacity));
+  color: rgba(var(--ek-info, #6ab441), var(--ek-bg-opacity));
 }
 
 .text-warning {
   --ek-text-opacity: 1;
-  color: rgba(244, 205, 17, var(--ek-text-opacity));
+  color: rgba(var(--ek-warning, #f4cd11), var(--ek-bg-opacity));
 }
 
 .text-danger {
   --ek-text-opacity: 1;
-  color: rgba(253, 7, 55, var(--ek-text-opacity));
+  color: rgba(var(--ek-danger, #fd0737), var(--ek-bg-opacity));
 }
 
 .text-light {
   --ek-text-opacity: 1;
-  color: rgba(108, 117, 125, var(--ek-text-opacity));
+  color: rgba(var(--ek-light, #6c757d), var(--ek-bg-opacity));
 }
 
 .text-dark {
   --ek-text-opacity: 1;
-  color: rgba(33, 37, 41, var(--ek-text-opacity));
+  color: rgba(var(--ek-dark, #212529), var(--ek-bg-opacity));
 }
 
 .text-primary-emphasis {
   --ek-text-opacity: 1;
-  color: rgba(102, 149, 244, var(--ek-text-opacity));
+  color: rgba(var(--ek-primary-emphasis, #6695f4), var(--ek-bg-opacity));
 }
 
 .text-secondary-emphasis {
   --ek-text-opacity: 1;
-  color: rgba(172, 121, 213, var(--ek-text-opacity));
+  color: rgba(var(--ek-secondary-emphasis, #ac79d5), var(--ek-bg-opacity));
 }
 
 .text-lighter {
   --ek-text-opacity: 1;
-  color: rgba(233, 236, 239, var(--ek-text-opacity));
+  color: rgba(var(--ek-lighter, #e9ecef), var(--ek-bg-opacity));
 }
 
 .text-white {
   --ek-text-opacity: 1;
-  color: rgba(var(--ek-white), var(--ek-text-opacity));
+  color: rgba(var(--ek-white, var(--ek-white)), var(--ek-bg-opacity));
 }
 
 .text-opacity-25 {
