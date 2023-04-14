@@ -1,4 +1,5 @@
 @use './vars' as v;
+@use './maps';
 
 $utilities: ();
 
@@ -250,7 +251,7 @@ $utilities: map-merge(
         'color': (
             property: color,
             class: text,
-            values: map-merge(v.$theme-colors, v.$text-colors),
+            values: maps.$utility-text-clrs,
             local-vars: (
                 'text-opacity': 1
             )
@@ -265,8 +266,20 @@ $utilities: map-merge(
                 1: 1,
             )
         ),
+        "bg": (
+            property: background-color,
+            class: bg,
+            local-vars: (
+                'bg-opacity': 1,
+            ),
+            values: maps.$utilities-bg-clrs
+        ),
         'bg-opacity': (
             property: opacity,
+            css-var: true,
+            local-vars: (
+                'bg-opacity': 1,
+            ),
             class: bg-opacity,
             values: (
                 10: .1,

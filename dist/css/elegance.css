@@ -25,13 +25,13 @@
 }
 :root,
 [data-ek-theme=light] {
-  --ek-violet: #7B2CBF;
-  --ek-indigo: #9D4EDD;
+  --ek-blue: #004fed;
+  --ek-indigo: #7420b9;
   --ek-purple: #C77DFF;
   --ek-pink: #d63384;
-  --ek-red: #f4134e;
+  --ek-red: #fd0737;
   --ek-orange: #fd7e14;
-  --ek-yellow: #f9c624;
+  --ek-yellow: #f4cd11;
   --ek-green: #24af27;
   --ek-teal: #6ab441;
   --ek-cyan: #0dcaf0;
@@ -39,16 +39,30 @@
   --ek-white: #fff;
   --ek-gray: #6c757d;
   --ek-gray-dark: #343a40;
-  --ek-primary: rgba(123, 44, 191, var(--ek-text-opacity));
-  --ek-secondary: rgba(157, 78, 221, var(--ek-text-opacity));
-  --ek-success: rgba(36, 175, 39, var(--ek-text-opacity));
-  --ek-info: rgba(106, 180, 65, var(--ek-text-opacity));
-  --ek-warning: rgba(249, 198, 36, var(--ek-text-opacity));
-  --ek-danger: rgba(244, 19, 78, var(--ek-text-opacity));
-  --ek-light: rgba(248, 249, 250, var(--ek-text-opacity));
-  --ek-dark: rgba(33, 37, 41, var(--ek-text-opacity));
+  --ek-primary: #004fed;
+  --ek-secondary: #7420b9;
+  --ek-success: #24af27;
+  --ek-info: #6ab441;
+  --ek-warning: #f4cd11;
+  --ek-danger: #fd0737;
+  --ek-light: #f8f9fa;
+  --ek-dark: #212529;
   --ek-body-color: #212529;
-  --ek-body-bg: #fff;
+  --ek-body-bg: #dee2e6;
+}
+
+*[data-ek-theme=dark],
+[data-ek-theme=dark] {
+  --ek-primary: #ccdcfb;
+  --ek-secondary: #7420b9;
+  --ek-success: #24af27;
+  --ek-info: #6ab441;
+  --ek-warning: #f4cd11;
+  --ek-danger: #fd0737;
+  --ek-light: #f8f9fa;
+  --ek-dark: #212529;
+  --ek-body-bg: #10002B;
+  --ek-body-color: #fafafa;
 }
 
 /* Box sizing rules */
@@ -78,6 +92,7 @@ body {
   line-height: 1.5;
   background-color: var(--ek-body-bg);
   color: var(--ek-body-color);
+  font-family: "EK-Poppins", Arial, sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -808,12 +823,12 @@ select {
 
 .text-primary {
   --ek-text-opacity: 1;
-  color: rgba(123, 44, 191, var(--ek-text-opacity));
+  color: rgba(0, 79, 237, var(--ek-text-opacity));
 }
 
 .text-secondary {
   --ek-text-opacity: 1;
-  color: rgba(16, 0, 43, var(--ek-text-opacity));
+  color: rgba(116, 32, 185, var(--ek-text-opacity));
 }
 
 .text-success {
@@ -828,12 +843,12 @@ select {
 
 .text-warning {
   --ek-text-opacity: 1;
-  color: rgba(249, 198, 36, var(--ek-text-opacity));
+  color: rgba(244, 205, 17, var(--ek-text-opacity));
 }
 
 .text-danger {
   --ek-text-opacity: 1;
-  color: rgba(244, 19, 78, var(--ek-text-opacity));
+  color: rgba(253, 7, 55, var(--ek-text-opacity));
 }
 
 .text-light {
@@ -848,17 +863,22 @@ select {
 
 .text-primary-emphasis {
   --ek-text-opacity: 1;
-  color: rgba(74, 26, 115, var(--ek-text-opacity));
+  color: rgba(102, 149, 244, var(--ek-text-opacity));
 }
 
 .text-secondary-emphasis {
   --ek-text-opacity: 1;
-  color: rgba(10, 0, 26, var(--ek-text-opacity));
+  color: rgba(172, 121, 213, var(--ek-text-opacity));
 }
 
 .text-lighter {
   --ek-text-opacity: 1;
   color: rgba(233, 236, 239, var(--ek-text-opacity));
+}
+
+.text-white {
+  --ek-text-opacity: 1;
+  color: rgba(var(--ek-white), var(--ek-text-opacity));
 }
 
 .text-opacity-25 {
@@ -877,24 +897,64 @@ select {
   --ek-text-opacity: 1;
 }
 
+.bg-primary {
+  --ek-bg-opacity: 1;
+  background-color: rgba(0, 79, 237, var(--ek-bg-opacity));
+}
+
+.bg-secondary {
+  --ek-bg-opacity: 1;
+  background-color: rgba(116, 32, 185, var(--ek-bg-opacity));
+}
+
+.bg-success {
+  --ek-bg-opacity: 1;
+  background-color: rgba(36, 175, 39, var(--ek-bg-opacity));
+}
+
+.bg-info {
+  --ek-bg-opacity: 1;
+  background-color: rgba(106, 180, 65, var(--ek-bg-opacity));
+}
+
+.bg-warning {
+  --ek-bg-opacity: 1;
+  background-color: rgba(244, 205, 17, var(--ek-bg-opacity));
+}
+
+.bg-danger {
+  --ek-bg-opacity: 1;
+  background-color: rgba(253, 7, 55, var(--ek-bg-opacity));
+}
+
+.bg-light {
+  --ek-bg-opacity: 1;
+  background-color: rgba(248, 249, 250, var(--ek-bg-opacity));
+}
+
+.bg-dark {
+  --ek-bg-opacity: 1;
+  background-color: rgba(33, 37, 41, var(--ek-bg-opacity));
+}
+
 .bg-opacity-10 {
-  opacity: 0.1;
+  --ek-bg-opacity: 0.1;
 }
 
 .bg-opacity-25 {
-  opacity: 0.25;
+  --ek-bg-opacity: 0.25;
 }
 
 .bg-opacity-50 {
-  opacity: 0.5;
+  --ek-bg-opacity: 0.5;
 }
 
 .bg-opacity-75 {
-  opacity: 0.75;
+  --ek-bg-opacity: 0.75;
 }
 
 .bg-opacity-100 {
-  opacity: 1;
+  --ek-bg-opacity: 1;
 }
 
 .bg-gradient {

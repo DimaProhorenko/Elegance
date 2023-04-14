@@ -1,7 +1,7 @@
 $prefix: ek-;
 
 @function tint-color($color, $weight) {
-    @return mix(white, $color, $weight);
+    @return mix(white, $color, $weight * 1%);
 }
 
 @function shade-color($color, $weight) {
@@ -20,5 +20,27 @@ $prefix: ek-;
 
 
 @function toRgba($clr, $cssVar) {
-    @return rgba($clr, var(--#{$prefix + $cssVar}))
+    @return rgba($clr, var(--#{$prefix + $cssVar}));
+}
+
+@function rgba-css-var($clr, $target: text) {
+    @return rgba($clr, var(--#{$prefix + $target + -opacity}));
+}
+
+@function map-loop($map, $callback, $args...) {
+    $_map: ();
+    $_args: ();
+    // $cb-val: if(map-get($args, text), text, null);
+    @each $arg in $args {
+        $var: if($arg == text, text, bg);
+        $_args: append($_args, $var);
+    }
+
+    @each $key, $value in $map {
+        $_map: map-merge($_map, ($key: call(get-function($callback), $value, $_args...)))
+    }
+
+    // @debug $_map;
+
+    @return $_map;
 }

@@ -1,0 +1,9 @@
+@use './vars' as v;
+@use './functions' as f;
+
+$utility-text-clrs: map-merge(f.map-loop(v.$theme-colors, rgba-css-var, text), f.map-loop(v.$text-colors, rgba-css-var, text));
+
+$utilities-bg-clrs: f.map-loop(v.$theme-colors, rgba-css-var, bg);
+
+// @debug $key;
+// $utils-text-clrs: 

@@ -28,6 +28,8 @@ body {
   
   background-color: var(--#{v.$prefix}body-bg);
   color: var(--#{v.$prefix}body-color);
+
+  font-family: v.$ff-base;
 }
 
 /* A elements that don't have a class get default styles */

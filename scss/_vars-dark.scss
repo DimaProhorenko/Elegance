@@ -1,0 +1,18 @@
+@use './vars' as v;
+@use './functions' as f;
+
+$body-bg-dark: #10002B;
+$body-color: #fafafa;
+
+$primary-dark: f.tint-color(v.$primary, 80);
+
+$theme-colors-dark: (
+    'primary': $primary-dark,
+    'secondary': v.$secondary,
+    'success': v.$success,
+    'info': v.$info,
+    'warning': v.$warning,
+    'danger': v.$danger,
+    'light': v.$light,
+    'dark': v.$dark
+) !default; 

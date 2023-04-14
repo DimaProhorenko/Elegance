@@ -1,4 +1,5 @@
 @use './vars' as v;
+@use './vars-dark' as vd;
 
 :root,
 [data-ek-theme='light'] {
@@ -14,4 +15,16 @@
     --#{v.$prefix}body-color: #{v.$body-color};
     --#{v.$prefix}body-bg: #{v.$body-bg};
     
+}
+
+
+*[data-ek-theme='dark'],
+[data-ek-theme='dark'] {
+
+    @each $color, $value in vd.$theme-colors-dark {
+        --#{v.$prefix + $color}: #{$value};
+    }
+
+    --#{v.$prefix}body-bg: #{vd.$body-bg-dark};
+    --#{v.$prefix}body-color: #{vd.$body-color};
 }

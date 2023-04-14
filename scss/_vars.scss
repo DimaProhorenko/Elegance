@@ -20,19 +20,19 @@ $gray-900: #212529 !default;
 $black:    #000 !default;
 
 // Color variables
-$violet:  #7B2CBF !default;
-$indigo:  #9D4EDD !default;
+$blue:       #004fed !default;
+$indigo:  #7420b9 !default;
 $purple:  #C77DFF !default;
 $pink:    #d63384 !default;
-$red:     #f4134e !default;
+$red:     #fd0737 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #f9c624 !default;
+$yellow:  #f4cd11 !default;
 $green:   #24af27 !default;
 $teal:    #6ab441 !default;
 $cyan:    #0dcaf0 !default;
 
 $colors: (
-  "violet":     $violet,
+  "blue":       $blue,
   "indigo":     $indigo,
   "purple":     $purple,
   "pink":       $pink,
@@ -50,15 +50,15 @@ $colors: (
 
 
 // Theme colors
-$primary:       f.toRgba($violet, text-opacity) !default;
+$primary:       $blue !default;
 @debug type-of($primary);
-$secondary:     f.toRgba($indigo, text-opacity) !default;
-$success:       f.toRgba($green, text-opacity)  !default;
-$info:          f.toRgba($teal, text-opacity) !default;
-$warning:       f.toRgba($yellow, text-opacity) !default;
-$danger:        f.toRgba($red, text-opacity) !default;
-$light:         f.toRgba($gray-100, text-opacity) !default;
-$dark:          f.toRgba($gray-900, text-opacity) !default;
+$secondary:     $indigo !default;
+$success:       $green  !default;
+$info:          $teal !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
 
 $theme-colors: (
     'primary': $primary,
@@ -77,25 +77,26 @@ $clr-contrast-dark: $black !default;
 $clr-contrast-light: $white !default;
 
 $text-primary-color: $primary !default;
-$text-primary-emphasis-color: f.shade-color($violet, 40) !default;
-$text-secondary-color: #10002B !default;
-$text-secondary-emphasis-color: f.shade-color($text-secondary-color, 40) !default;
+$text-primary-emphasis-color: f.tint-color($blue, 40) !default;
+$text-secondary-color: $indigo !default;
+$text-secondary-emphasis-color: f.tint-color($text-secondary-color, 40) !default;
 $text-light: $gray-600;
 $text-lighter: $gray-200;
 
 $text-colors: (
     primary: $primary,
-    primary-emphasis: f.toRgba($text-primary-emphasis-color, text-opacity),
-    secondary: f.toRgba($text-secondary-color, text-opacity),
-    secondary-emphasis: f.toRgba($text-secondary-emphasis-color, text-opacity),
-    light: f.toRgba($text-light, text-opacity),
-    lighter: f.toRgba($text-lighter, text-opacity) 
+    primary-emphasis: $text-primary-emphasis-color,
+    secondary: $text-secondary-color,
+    secondary-emphasis: $text-secondary-emphasis-color,
+    light: $text-light,
+    lighter: $text-lighter,
+    white: var(--#{$prefix}white)
 ) !default;
 
 
 // Body
 $body-color:                $gray-900 !default;
-$body-bg:                   $white !default;
+$body-bg:                   $gray-300 !default;
 
 $body-emphasis-color:       $black !default;
 
