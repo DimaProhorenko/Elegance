@@ -271,10 +271,10 @@ $utilities: map-merge(
             property: color,
             class: link,
             local-vars: (
-                'link-opacity': 1,
+                'text-opacity': 1,
             ),
             state: hover focus,
-            values: map-merge(f.map-loop(v.$colors, rgba-css-var, link, useVars) ,maps.$utility-text-clrs)
+            values: map-merge(f.map-loop(v.$colors, rgba-css-var, text, useVars) ,maps.$utility-text-clrs)
         ),
         "bg": (
             property: background-color,

@@ -33,10 +33,15 @@
             }
             @if $states {
                 @each $state in $states {
-                    @debug #{$class + $infix + $key}-#{$state} #{$state};
-                    .#{$class + $infix + $key}-#{$state}:#{$state} {
-                        opacity: 0.5;
+                    @if $local-vars {
+                        .#{$class + $infix + $key}-#{$state}:#{$state} {
+                            @each $local-var, $variable in $local-vars {
+                                --#{v.$prefix + $local-var}: .7;
+                            }
+                            // --#{v.$prefix + $local-var}: calc(--#{v.$prefix + $local-var} * .8);
+                        }
                     }
+                    
                 }
             }
         }

@@ -37,8 +37,8 @@ $prefix: ek-;
 
 }
 
-@function rgba-css-var($clr, $target: text, $useVar: false, $identifier: null) {
-    
+@function rgba-css-var($clr, $target: text, $useVar: false, $identifier) {
+
     @if ($useVar) {
         @return rgba(useCssVar($identifier, $clr, $target), var(--#{$prefix + $target + -opacity}));
     }
@@ -50,6 +50,29 @@ $prefix: ek-;
     $_map: ();
     $_args: ();
     $var: if(list.index($args, text), text, bg);
+
+    $useVars: if(list.index($args, useVars), true, null);
+    // @each $arg in $args {
+    //     $var: if($arg == text, text, bg);
+    //     $_args: append($_args, $var);
+    // }
+    // $_args: append($_args, $useVars);
+
+    @each $key, $value in $map {
+        $identifier: if($useVars, $key, null);
+        $_map: map-merge($_map, ($key: call(get-function($callback), $value, $var, $useVars, $identifier)))
+    }
+
+    // @debug $_map;
+
+    @return $_map;
+}
+
+@function map-loop2($map, $callback, $args...) {
+    $_map: ();
+    $_args: ();
+    $var: list.nth($args, 1);
+    @debug $var;
 
     $useVars: if(list.index($args, useVars), true, null);
     // @each $arg in $args {
