@@ -120,10 +120,6 @@ $grid-breakpoints: (
   xxl: 1400px
 ) !default;
 
-$grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
-
-
 $spacer: 1rem;
 
 $spacers: (
@@ -134,6 +130,10 @@ $spacers: (
     4: $spacer * 1.5,
     5: $spacer * 3,
 );
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$grid-gutters: $spacers;
 
 
 // Typography

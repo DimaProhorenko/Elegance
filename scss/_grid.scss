@@ -1,0 +1,49 @@
+@use './vars' as v;
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    --gutter-x: v.$grid-gutter-width;
+    --gutter-y: v.$grid-gutter-widtd;
+    margin-inline: calc(-0.5 * var(--gutter));
+    margin-block-start: calc(-1 * var(--gutter-y));
+}
+
+[class*='col'] {
+    min-height: 1px;
+    flex: 1;
+    width: 100%;
+    padding-inline: calc(var(--gutter-x) / 2);
+    margin-block-start: var(--gutter-y);
+}
+
+.col {
+    flex: 1 0 0%;
+    width: auto;
+}
+
+// Generate cols
+@each $key, $breakpoint in v.$grid-breakpoints {
+    @media (min-width: $breakpoint) { 
+      @for $i from 1 through v.$grid-columns {
+        $percent: calc($i/v.$grid-columns * 100%);
+        .col-#{$key}-#{$i} {
+          flex: 0 0 $percent;
+          max-width: $percent;
+        }
+      }
+    }
+  }
+
+@each $key, $gut in v.$grid-gutters {
+    .gx-#{$key} {
+        --gutter-x: #{$gut};
+    }
+    .gy-#{$key} {
+        --gutter-y: #{$gut};
+    }
+    .g-#{$key} {
+        --gutter-x: #{$gut};
+        --gutter-y: #{$gut};
+    }
+}
