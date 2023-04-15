@@ -135,6 +135,8 @@ $grid-columns:                12 !default;
 $grid-gutter-width:           1.5rem !default;
 $grid-gutters: $spacers;
 
+$wrapper-max-width: f.toRem(1220);
+
 
 // Typography
 $ff-base: 'EK-Poppins', Arial, sans-serif !default;
@@ -177,3 +179,11 @@ $h-mb: $spacer * .5;
 $h-color: null !default;
 $h-fw: $fw-semibold !default;
 $h-lineheight: 1.2 !default;
+
+$card-padding-inline: 2rem;
+$card-padding-block: 2rem;
+$card-bg: transparent;
+$card-border-radius: 8px;
+$card-border: none;
+$card-shadow-color: rgba(0, 0, 0, .3);
+$card-shadow: 5px 5px 20px $card-shadow-color;

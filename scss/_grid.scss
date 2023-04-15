@@ -3,9 +3,9 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    --gutter-x: v.$grid-gutter-width;
-    --gutter-y: v.$grid-gutter-widtd;
-    margin-inline: calc(-0.5 * var(--gutter));
+    --gutter-x: #{v.$grid-gutter-width};
+    --gutter-y: #{v.$grid-gutter-width};
+    margin-inline: calc(-0.5 * var(--gutter-x));
     margin-block-start: calc(-1 * var(--gutter-y));
 }
 

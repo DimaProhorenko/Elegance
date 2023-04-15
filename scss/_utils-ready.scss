@@ -1,6 +1,13 @@
 @use './functions' as f;
 @use './mixins/generate-utilities' as gu;
 @use './utilities' as u;
+@use './vars' as v;
+
+.wrapper {
+    width: 90%;
+    max-width: v.$wrapper-max-width;
+    margin-inline: auto;
+}
 
 @each $key, $value in u.$utilities {
     @include gu.generate-utility($value);

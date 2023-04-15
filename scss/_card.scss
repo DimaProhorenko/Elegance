@@ -1,0 +1,12 @@
+@use './vars' as v;
+
+.card {
+    padding-inline: v.$card-padding-inline;
+    padding-block: v.$card-padding-block;
+    border: v.$card-border;
+    border-radius: v.$card-border-radius;
+    background-color: v.$card-bg;
+    color: var(--ek-body-color);
+    box-shadow: v.$card-shadow;
+    
+}

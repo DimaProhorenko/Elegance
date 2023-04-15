@@ -172,6 +172,12 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.wrapper {
+  width: 90%;
+  max-width: 76.25rem;
+  margin-inline: auto;
+}
+
 .align-baseline {
   vertical-align: baseline;
 }
@@ -1379,9 +1385,9 @@ select {
 .row {
   display: flex;
   flex-wrap: wrap;
-  --gutter-x: v.$grid-gutter-width;
-  --gutter-y: v.$grid-gutter-widtd;
-  margin-inline: calc(-0.5 * var(--gutter));
+  --gutter-x: 1.5rem;
+  --gutter-y: 1.5rem;
+  margin-inline: calc(-0.5 * var(--gutter-x));
   margin-block-start: calc(-1 * var(--gutter-y));
 }
 
@@ -1774,4 +1780,14 @@ select {
 .g-5 {
   --gutter-x: 3rem;
   --gutter-y: 3rem;
+}
+
+.card {
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--ek-body-color);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
 }
