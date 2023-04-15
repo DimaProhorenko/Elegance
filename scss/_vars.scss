@@ -5,6 +5,7 @@
 // Should follow the "$component-state-property-size" formula
 
 $prefix: ek-;
+$dark-tint-val: 40;
 
 // Gray color vars
 $white:    #fff !default;
@@ -48,6 +49,8 @@ $colors: (
   "gray-dark":  $gray-800
 ) !default;
 
+$colors-rgb: f.map-loop($colors, toRgb);
+
 
 // Theme colors
 $primary:       $blue !default;
@@ -70,6 +73,8 @@ $theme-colors: (
     'dark': $dark
 ) !default; 
 
+$theme-colors-rgb: f.map-loop($theme-colors, toRgb);
+
 
 
 $min-contrast-ration: 4.5 !default;
@@ -85,14 +90,13 @@ $text-light: $gray-600;
 $text-lighter: $gray-200;
 
 $text-colors: (
-    primary: $primary,
     primary-emphasis: $text-primary-emphasis-color,
-    secondary: $text-secondary-color,
     secondary-emphasis: $text-secondary-emphasis-color,
-    light: $text-light,
-    lighter: $text-lighter,
-    white: var(--#{$prefix}white)
+    'white': $white,
+    
 ) !default;
+
+$text-colors-rgb: f.map-loop($text-colors, toRgb);
 
 
 // Body

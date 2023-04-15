@@ -1,5 +1,6 @@
 @use './vars' as v;
 @use './vars-dark' as vd;
+@use './maps';
 
 :root,
 [data-ek-theme='light'] {
@@ -8,8 +9,24 @@
         --#{v.$prefix}#{$color}: #{$value};
     }
 
+    @each $color, $value in v.$colors-rgb {
+        --#{v.$prefix}#{$color}-rgb: #{$value};
+    }
+
     @each $color, $value in v.$theme-colors {
         --#{v.$prefix}#{$color}: #{$value};
+    }
+
+    @each $color, $value in v.$theme-colors-rgb {
+        --#{v.$prefix}#{$color}-rgb: #{$value};
+    }
+
+    @each $color, $value in v.$text-colors {
+        --#{v.$prefix}#{$color}: #{$value};
+    }
+    
+    @each $color, $value in v.$text-colors-rgb {
+        --#{v.$prefix}#{$color}-rgb: #{$value};
     }
 
     --#{v.$prefix}body-color: #{v.$body-color};
@@ -23,6 +40,10 @@
 
     @each $color, $value in vd.$theme-colors-dark {
         --#{v.$prefix + $color}: #{$value};
+    }
+
+    @each $color, $value in vd.$theme-colors-dark-rgb {
+        --#{v.$prefix + $color}-rgb: #{$value};
     }
 
     --#{v.$prefix}body-bg: #{vd.$body-bg-dark};

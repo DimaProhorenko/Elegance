@@ -21,9 +21,16 @@ $prefix: ek-;
 }
 
 @function useCssVar($identifier, $clr, $target) {
-    @return var(--#{$prefix + $identifier}, $clr);
+    @return var(--#{$prefix + $identifier + -rgb}, $clr);
 }
 
+@function toRgb($clr, $args...) {
+    @return red($clr), green($clr), blue($clr);
+}
+
+// @function createRgbVar($key, $val, $args...) {
+//     @return $key: $val;
+// }
 
 @function toRgba($clr, $cssVar) {
     @return rgba($clr, var(--#{$prefix + $cssVar}));
@@ -42,16 +49,14 @@ $prefix: ek-;
 @function map-loop($map, $callback, $args...) {
     $_map: ();
     $_args: ();
-    $var: null;
+    $var: if(list.index($args, text), text, bg);
+
     $useVars: if(list.index($args, useVars), true, null);
-    @debug $useVars;
-    // $cb-val: if(map-get($args, text), text, null);
-    @each $arg in $args {
-        $var: if($arg == text, text, bg);
-        $_args: append($_args, $var);
-    }
-    $_args: append($_args, $useVars);
-    @debug $_args;
+    // @each $arg in $args {
+    //     $var: if($arg == text, text, bg);
+    //     $_args: append($_args, $var);
+    // }
+    // $_args: append($_args, $useVars);
 
     @each $key, $value in $map {
         $identifier: if($useVars, $key, null);

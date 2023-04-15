@@ -4,14 +4,14 @@
 $body-bg-dark: #10002B;
 $body-color: #fafafa;
 
-$primary-dark: f.tint-color(v.$primary, 80);
-$secondary:     v.$indigo !default;
-$success:       v.$green  !default;
-$info:          v.$teal !default;
-$warning:       v.$yellow !default;
-$danger:        green !default;
-$light:         v.$gray-900 !default;
-$dark:          v.$gray-100 !default;
+$primary-dark: f.tint-color(v.$primary, v.$dark-tint-val);
+$secondary:     f.tint-color(v.$secondary, v.$dark-tint-val) !default;
+$success:       f.tint-color(v.$green, v.$dark-tint-val)  !default;
+$info:          f.tint-color(v.$green, v.$dark-tint-val) !default;
+$warning:       f.tint-color(v.$yellow, v.$dark-tint-val) !default;
+$danger:        f.tint-color(v.$danger, v.$dark-tint-val) !default;
+$light:         f.tint-color(v.$gray-900, v.$dark-tint-val) !default;
+$dark:          f.tint-color(v.$gray-100, v.$dark-tint-val) !default;
 
 $theme-colors-dark: (
     'primary': $primary-dark,
@@ -23,3 +23,5 @@ $theme-colors-dark: (
     'light': $light,
     'dark': $dark
 ) !default; 
+
+$theme-colors-dark-rgb: f.map-loop($theme-colors-dark, toRgb);
