@@ -2427,6 +2427,7 @@ select {
   height: 1rem;
   border-radius: 50%;
   background: var(--ek-primary);
+  cursor: pointer;
 }
 .form__range::-moz-range-thumb {
   appearance: none;
@@ -2435,4 +2436,9 @@ select {
   height: 1rem;
   border-radius: 50%;
   background: var(--ek-primary);
+  cursor: pointer;
+}
+.form__range:disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
