@@ -1,0 +1,96 @@
+@use '../../vars' as v;
+
+.form__check {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+
+
+    &-input {
+        -webkit-appearance: none;
+        appearance: none;
+        display: inline-block;
+        width: v.$form-check-width;
+        height: v.$form-check-height;
+        position: relative;
+
+
+        background-color: v.$form-check-bg;
+
+        border: v.$form-check-border;
+        border-radius: v.$form-check-border-radius;
+
+        box-shadow: v.$form-check-shadow;
+        transition: box-shadow v.$transition-duration v.$transition-easing;
+
+        &:disabled,
+        &:disabled + label {
+            opacity: .6;
+            pointer-events: none;
+        }
+
+        &[type='radio'] {
+            border-radius: v.$form-check-radio-border-radius;
+        }
+
+        &:focus {
+            box-shadow: v.$form-check-focus-shadow;
+        }
+
+        &::before {
+            content: '';
+            width: 60%;
+            height: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            scale: 0;
+            z-index: 1;
+        }
+
+        &[type='checkbox']::before {
+            
+            background-color: v.$form-check-mark-color;
+            transform-origin: bottom left;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+            
+            
+        }
+
+        &[type='radio']::before {
+            border-radius: v.$form-check-radio-border-radius;
+            background-color: v.$form-check-radio-bg;
+        }
+
+        &:checked {
+            background-color: v.$form-check-checked-bg;
+
+            &::before {
+                scale: 1;
+            }
+        }
+    }
+
+    // Sizing 
+    &--sm {
+        & > input {
+            width: v.$form-check-width-sm;
+            height: v.$form-check-height-sm;
+        }
+
+        & > label {
+            font-size: v.$form-check-label-fs-sm;
+        }
+    }
+    &--lg {
+        & > input {
+            width: v.$form-check-width-lg;
+            height: v.$form-check-height-lg;
+        }
+
+        & > label {
+            font-size: v.$form-check-label-fs-lg;
+        }
+    }
+}

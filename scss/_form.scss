@@ -1,3 +1,4 @@
-@use './mixins/form/form__group';
+@use './mixins/form/form-group';
+@use './mixins/form/form-label';
 @use './mixins/form/form-control';
-@use './mixins/form/form_check';
+@use './mixins/form/form-check';

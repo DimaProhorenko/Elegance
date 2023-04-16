@@ -240,3 +240,15 @@ $form-check-checked-bg: var(--#{$prefix}primary);
 $form-check-mark-color: $light;
 $form-check-shadow: $form-control-shadow;
 $form-check-focus-shadow: $form-control-focus-shadow;
+
+$form-check-radio-border-radius: 50%;
+$form-check-radio-bg: var(--#{$prefix}body-bg);
+
+// Sizing
+$form-check-width-sm: f.toRem(15);
+$form-check-height-sm: f.toRem(15);
+$form-check-label-fs-sm: .85rem;
+
+$form-check-width-lg: f.toRem(20);
+$form-check-height-lg: f.toRem(20);
+$form-check-label-fs-lg: 1.25rem;

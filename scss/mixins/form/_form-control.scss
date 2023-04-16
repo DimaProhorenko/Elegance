@@ -20,6 +20,11 @@
     transition-duration: v.$transition-duration;
     transition-timing-function: v.$transition-easing;
 
+    &:disabled {
+        opacity: .6;
+        pointer-events: none;
+    }
+
     &:not(:disabled) {
         cursor: pointer;
     }
