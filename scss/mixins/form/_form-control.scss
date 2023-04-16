@@ -50,4 +50,22 @@
     &--sm {
         font-size: .85rem;
     }
+
+
+    &--color {
+        width: v.$form-color-width;
+        height: v.$form-color-height;
+        padding: v.$form-color-padding;
+
+
+        &::-moz-color-swatch {
+            border: 0;
+            border-radius: 5px;
+        }
+
+        &::-webkit-color-swatch {
+            border: 0;
+            border-radius: 5px;
+        }
+    }
 }

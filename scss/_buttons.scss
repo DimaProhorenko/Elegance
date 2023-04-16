@@ -36,6 +36,15 @@
         position: absolute;
         clip: rect(0, 0, 0, 0);
         pointer-events: none;
+
+        & + [class*='btn']:not([class*='btn--outline']) {
+            filter: brightness(.9);
+            transition: filter v.$transition-duration v.$transition-easing;
+        }
+
+        &:checked + [class*='btn']:not([class*='btn--outline']) {
+            filter: brightness(1);
+        }
     }
 
     &:disabled,

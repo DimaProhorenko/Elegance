@@ -31,7 +31,7 @@
   --ek-pink: #d63384;
   --ek-red: #ff0000;
   --ek-orange: #fd7e14;
-  --ek-yellow: #f4cd11;
+  --ek-yellow: #ffdf41;
   --ek-green: #24af27;
   --ek-teal: #6ab441;
   --ek-cyan: #0dcaf0;
@@ -46,7 +46,7 @@
   --ek-pink-rgb: 214, 51, 132;
   --ek-red-rgb: 255, 0, 0;
   --ek-orange-rgb: 253, 126, 20;
-  --ek-yellow-rgb: 244, 205, 17;
+  --ek-yellow-rgb: 255, 223, 65;
   --ek-green-rgb: 36, 175, 39;
   --ek-teal-rgb: 106, 180, 65;
   --ek-cyan-rgb: 13, 202, 240;
@@ -59,7 +59,7 @@
   --ek-secondary: #7420b9;
   --ek-success: #24af27;
   --ek-info: #6ab441;
-  --ek-warning: #f4cd11;
+  --ek-warning: #ffdf41;
   --ek-danger: #ff0000;
   --ek-light: #f8f9fa;
   --ek-dark: #212529;
@@ -67,7 +67,7 @@
   --ek-secondary-rgb: 116, 32, 185;
   --ek-success-rgb: 36, 175, 39;
   --ek-info-rgb: 106, 180, 65;
-  --ek-warning-rgb: 244, 205, 17;
+  --ek-warning-rgb: 255, 223, 65;
   --ek-danger-rgb: 255, 0, 0;
   --ek-light-rgb: 248, 249, 250;
   --ek-dark-rgb: 33, 37, 41;
@@ -90,7 +90,7 @@
   --ek-secondary: #ac79d5;
   --ek-success: #7ccf7d;
   --ek-info: #7ccf7d;
-  --ek-warning: #f8e170;
+  --ek-warning: #ffec8d;
   --ek-danger: #ff6666;
   --ek-light: #7a7c7f;
   --ek-dark: #fbfbfc;
@@ -98,7 +98,7 @@
   --ek-secondary-rgb: 172, 121, 213;
   --ek-success-rgb: 124, 207, 125;
   --ek-info-rgb: 124, 207, 125;
-  --ek-warning-rgb: 248, 225, 112;
+  --ek-warning-rgb: 255, 236, 141;
   --ek-danger-rgb: 255, 102, 102;
   --ek-light-rgb: 122, 124, 127;
   --ek-dark-rgb: 251, 251, 252;
@@ -953,7 +953,7 @@ select {
 
 .text-yellow {
   --ek-text-opacity: 1;
-  color: rgba(var(--ek-yellow-rgb, #f4cd11), var(--ek-text-opacity)) !important;
+  color: rgba(var(--ek-yellow-rgb, #ffdf41), var(--ek-text-opacity)) !important;
 }
 
 .text-green {
@@ -1018,7 +1018,7 @@ select {
 
 .text-warning {
   --ek-text-opacity: 1;
-  color: rgba(var(--ek-warning-rgb, 244, 205, 17), var(--ek-text-opacity)) !important;
+  color: rgba(var(--ek-warning-rgb, 255, 223, 65), var(--ek-text-opacity)) !important;
 }
 
 .text-danger {
@@ -1154,7 +1154,7 @@ select {
 
 .link-yellow {
   --ek-text-opacity: 1;
-  color: rgba(var(--ek-yellow-rgb, #f4cd11), var(--ek-text-opacity)) !important;
+  color: rgba(var(--ek-yellow-rgb, #ffdf41), var(--ek-text-opacity)) !important;
 }
 
 .link-hover:hover {
@@ -1323,7 +1323,7 @@ select {
 
 .link-warning {
   --ek-text-opacity: 1;
-  color: rgba(var(--ek-warning-rgb, 244, 205, 17), var(--ek-text-opacity)) !important;
+  color: rgba(var(--ek-warning-rgb, 255, 223, 65), var(--ek-text-opacity)) !important;
 }
 
 .link-hover:hover {
@@ -1421,7 +1421,7 @@ select {
 
 .bg-warning {
   --ek-bg-opacity: 1;
-  background-color: rgba(244, 205, 17, var(--ek-bg-opacity)) !important;
+  background-color: rgba(255, 223, 65, var(--ek-bg-opacity)) !important;
 }
 
 .bg-danger {
@@ -1472,7 +1472,7 @@ select {
   margin-block-start: calc(-1 * var(--gutter-y));
 }
 
-[class*=col] {
+[class*=col-] {
   min-height: 1px;
   flex: 1;
   width: 100%;
@@ -1997,6 +1997,13 @@ select {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
+.btn--check + [class*=btn]:not([class*=btn--outline]) {
+  filter: brightness(0.9);
+  transition: filter 300ms ease-in-out;
+}
+.btn--check:checked + [class*=btn]:not([class*=btn--outline]) {
+  filter: brightness(1);
+}
 .btn:disabled, .btn--disabled {
   opacity: 0.3;
   cursor: initial;
@@ -2006,7 +2013,6 @@ select {
 .btn--primary {
   background-color: #004fed;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--primary:hover, .btn--primary.active {
   background-color: #3372f1;
@@ -2015,7 +2021,6 @@ select {
 .btn--secondary {
   background-color: #7420b9;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--secondary:hover, .btn--secondary.active {
   background-color: #904dc7;
@@ -2024,7 +2029,6 @@ select {
 .btn--success {
   background-color: #24af27;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--success:hover, .btn--success.active {
   background-color: #50bf52;
@@ -2033,25 +2037,22 @@ select {
 .btn--info {
   background-color: #6ab441;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--info:hover, .btn--info.active {
   background-color: #88c367;
 }
 
 .btn--warning {
-  background-color: #f4cd11;
+  background-color: #ffdf41;
   color: var(--ek-black);
-  border: transparent;
 }
 .btn--warning:hover, .btn--warning.active {
-  background-color: #f6d741;
+  background-color: #ffe567;
 }
 
 .btn--danger {
   background-color: #ff0000;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--danger:hover, .btn--danger.active {
   background-color: #ff3333;
@@ -2060,7 +2061,6 @@ select {
 .btn--light {
   background-color: #f8f9fa;
   color: var(--ek-black);
-  border: transparent;
 }
 .btn--light:hover, .btn--light.active {
   background-color: #c6c7c8;
@@ -2069,7 +2069,6 @@ select {
 .btn--dark {
   background-color: #212529;
   color: var(--ek-white);
-  border: transparent;
 }
 .btn--dark:hover, .btn--dark.active {
   background-color: #4d5154;
@@ -2136,8 +2135,8 @@ select {
 }
 
 .btn--outline-warning {
-  border-color: #f4cd11;
-  color: #f4cd11;
+  border-color: #ffdf41;
+  color: #ffdf41;
   transition-property: background-color, color;
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
@@ -2146,7 +2145,7 @@ select {
   filter: brightness(1.2);
 }
 .btn--check:checked + .btn--outline-warning {
-  background-color: #f4cd11;
+  background-color: #ffdf41;
   color: #000;
 }
 
@@ -2210,6 +2209,58 @@ select {
   border-bottom-right-radius: 0.5em;
 }
 
+.form__group {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+}
+.form__group-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background-color: var(--ek-light-gray);
+  border: 1px solid var(--ek-form-control-border-color);
+}
+.form__group-text:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.form__group-text:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.form__group .form__control {
+  z-index: 3;
+}
+.form__group .form__control:first-child,
+.form__group .btn:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form__group .form__control:last-child,
+.form__group .btn:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form__group .form__control:not(:first-child):not(:last-child),
+.form__group .btn:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.form__group--sm > .form__control {
+  font-size: 0.875rem;
+}
+.form__group--sm > .form__group-text {
+  padding-block: 0.25rem;
+}
+.form__group--lg > .form__control {
+  font-size: 1.25rem;
+}
+.form__group--lg > .form__group-text {
+  padding: 0.75rem;
+}
+
 .label {
   display: block;
 }
@@ -2256,11 +2307,29 @@ select {
 .form__control--sm {
   font-size: 0.85rem;
 }
+.form__control--color {
+  width: 3rem;
+  height: 2.375rem;
+  padding: 0.25rem;
+}
+.form__control--color::-moz-color-swatch {
+  border: 0;
+  border-radius: 5px;
+}
+.form__control--color::-webkit-color-swatch {
+  border: 0;
+  border-radius: 5px;
+}
 
 .form__check {
   display: flex;
   align-items: center;
   gap: 0.5em;
+}
+.form__check:has(.form__check-input:not(:disabled)),
+.form__check .form__check-input:not(:disabled),
+.form__check .form__check-input:not(:disabled) + label {
+  cursor: pointer;
 }
 .form__check-input {
   -webkit-appearance: none;
@@ -2269,6 +2338,7 @@ select {
   width: 1.125rem;
   height: 1.125rem;
   position: relative;
+  flex-shrink: 0;
   background-color: transparent;
   border: 1px solid var(--ek-form-control-border-color);
   border-radius: calc(1.125rem / 3);

@@ -1,0 +1,71 @@
+@use '../../vars' as v;
+
+.form__group {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    position: relative;
+
+
+    &-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: v.$form-group-addon-padding;
+        background-color: v.$form-group-addon-bg;
+        border: v.$form-control-border;
+
+        &:first-child {
+            border-top-left-radius: v.$form-group-addon-border-radius;
+            border-bottom-left-radius: v.$form-group-addon-border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: v.$form-group-addon-border-radius;
+            border-bottom-right-radius: v.$form-group-addon-border-radius;
+        }
+    }
+
+    .form__control {
+        z-index: 3;
+    }
+
+    .form__control,
+    .btn {
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            border-radius: 0;
+        }
+    }
+
+
+    // Sizing
+    &--sm {
+
+        & > .form__control {
+            font-size: v.$form-control-fs-sm;
+        }
+
+        & > .form__group-text {
+            padding-block: v.$form-group-addon-padding-sm;
+        }
+    }
+    &--lg {
+
+        & > .form__control {
+            font-size: v.$form-control-fs-lg;
+        }
+
+        & > .form__group-text {
+            padding: v.$form-group-addon-padding-lg;
+        }
+    }
+}

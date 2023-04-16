@@ -9,7 +9,7 @@
     margin-block-start: calc(-1 * var(--gutter-y));
 }
 
-[class*='col'] {
+[class*='col-'] {
     min-height: 1px;
     flex: 1;
     width: 100%;

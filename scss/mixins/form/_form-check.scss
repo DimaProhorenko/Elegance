@@ -5,6 +5,12 @@
     align-items: center;
     gap: .5em;
 
+    &:has(.form__check-input:not(:disabled)),
+    .form__check-input:not(:disabled),
+    .form__check-input:not(:disabled) + label {
+        cursor: pointer;
+    }
+
 
     &-input {
         -webkit-appearance: none;
@@ -13,6 +19,7 @@
         width: v.$form-check-width;
         height: v.$form-check-height;
         position: relative;
+        flex-shrink: 0;
 
 
         background-color: v.$form-check-bg;
@@ -22,6 +29,8 @@
 
         box-shadow: v.$form-check-shadow;
         transition: box-shadow v.$transition-duration v.$transition-easing;
+
+        
 
         &:disabled,
         &:disabled + label {

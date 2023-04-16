@@ -6,7 +6,7 @@
     $clr,
     $clr-dark,
     $hover-bg,
-    $border: transparent,
+    $border: null,
 ) {
     background-color: $bg;
     color: f.pickColor($bg, $clr, $clr-dark);
