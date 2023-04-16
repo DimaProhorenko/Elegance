@@ -45,6 +45,9 @@ $utilities: map-merge(
             property: max-width,
             class: mw,
             values: (
+                25: 25%,
+                50: 50%,
+                75: 75%,
                 100: 100%
             )
         ),
@@ -152,82 +155,93 @@ $utilities: map-merge(
         "margin": (
             property: margin,
             class: m,
-            values: v.$spacers
+            values: v.$spacers,
         ),
         "margin-y": (
             property: margin-block,
             class: my,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "margin-x": (
             property: margin-inline,
             class: mx,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "margin-top": (
             property: margin-block-start,
             class: mt,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "margin-bot": (
             property: margin-block-end,
             class: mb,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "margin-left": (
             property: margin-inline-start,
             class: ml,
-            values: v.$spacers
+            values: v.$spacers,
         ),
         "margin-right": (
             property: margin-inline-end,
             class: mr,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "padding": (
             property: padding,
             class: p,
-            values: v.$spacers
+            values: v.$spacers,
         ),
         "padding-y": (
             property: padding-block,
             class: py,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "padding-x": (
             property: padding-inline,
             class: px,
-            values: v.$spacers
+            values: v.$spacers,
         ),
         "padding-top": (
             property: padding-block-start,
             class: pt,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "padding-bot": (
             property: padding-block-end,
             class: pb,
-            values: v.$spacers
+            values: v.$spacers,
         ),
         "padding-left": (
             property: padding-inline-start,
             class: pl,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "padding-right": (
             property: padding-inline-end,
             class: pr,
-            values: v.$spacers
+            values: v.$spacers,
+            
         ),
         "font-size": (
             property: font-size,
             class: fs,
-            values: v.$font-sizes
+            values: v.$font-sizes,
+            
         ),
         'font-weight': (
             property: font-weight,
             class: fw,
-            values: v.$font-weight
+            values: v.$font-weight,
+            
         ),
         'font-style': (
             property: font-style,
@@ -268,6 +282,14 @@ $utilities: map-merge(
             )
         ),
         'link': (
+            local-vars: (
+                'text-opacity': 1
+            ),
+            infix: '',
+            class: link,
+            state: hover focus
+        ),
+        'link-variants': (
             property: color,
             class: link,
             local-vars: (

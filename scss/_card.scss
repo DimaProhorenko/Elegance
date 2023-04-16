@@ -1,12 +1,59 @@
 @use './vars' as v;
+@use './functions' as f;
 
 .card {
-    padding-inline: v.$card-padding-inline;
-    padding-block: v.$card-padding-block;
+    
     border: v.$card-border;
     border-radius: v.$card-border-radius;
     background-color: v.$card-bg;
     color: var(--ek-body-color);
     box-shadow: v.$card-shadow;
-    
+    overflow: hidden;
+
+
+    &__img {
+        max-height: f.toRem(250);
+        height: 100%;
+    }
+
+    &__title {
+        font-size: f.toRem(25);
+    }
+
+    &__subtitle {
+        font-weight: 500;
+    }
+
+    &__header,
+    &__footer {
+        padding-inline: v.$card-padding-inline;
+        padding-block: calc(v.$card-padding-block / 2);
+
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        background-color: v.$card-header-bg;
+    }
+
+    &__footer {
+        font-size: 1;
+        font-weight: 400;
+    }
+
+    &__body {
+        padding-inline: v.$card-padding-inline;
+        padding-block: v.$card-padding-block;
+
+        & > * + * {
+            margin-block-start: .5em;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: inherit;
+        & + & {
+            margin-inline-start: .5em;
+        }
+    }
 }

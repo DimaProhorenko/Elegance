@@ -11,7 +11,7 @@
     $property: map-get($utility, property);
 
     $class: if(map-has-key($utility, class), map-get($utility, class), '');
-    $infix: if(map-has-key($utility, class), '-', '');
+    $infix: if(map-has-key($utility, infix), map-get($utility, infix), '-');
     $css-var: if(map-has-key($utility, css-var), map-get($utility, class), null);
     $local-vars: map-get($utility, local-vars);
     $states: map-get($utility, state);
@@ -29,14 +29,17 @@
                         --#{v.$prefix + $local-var}: #{$variable};
                     }
                 }
-                #{$property}: $value;
+                @if ($property) {
+                    #{$property}: $value !important;
+                }
             }
             @if $states {
                 @each $state in $states {
                     @if $local-vars {
-                        .#{$class + $infix + $key}-#{$state}:#{$state} {
+                        .#{$class}-#{$state}:#{$state} {
                             @each $local-var, $variable in $local-vars {
-                                --#{v.$prefix + $local-var}: .7;
+                                // --#{v.$prefix + $local-var}: .8;
+                                filter: brightness(.7);
                             }
                             // --#{v.$prefix + $local-var}: calc(--#{v.$prefix + $local-var} * .8);
                         }

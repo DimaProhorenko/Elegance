@@ -32,17 +32,26 @@ body {
   font-family: v.$ff-base;
 }
 
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1;
+
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
 a {
+  --#{v.$prefix}text-opacity: 1;
   text-decoration: none;
+  color: rgba(var(--#{v.$prefix}link-color-rbg), var(--#{v.$prefix}text-opacity));
 
   &:hover,
   &:focus {
     text-decoration: underline;
+    outline: none;
+    border: none;
   }
 }
 
@@ -50,7 +59,9 @@ a {
 /* Make images easier to work with */
 img,
 picture {
+  width: 100%;
   max-width: 100%;
+  object-fit: cover;
   display: block;
 }
 

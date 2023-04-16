@@ -23,6 +23,15 @@
 }
 
 // Generate cols
+
+@for $i from 1 through v.$grid-columns {
+  $percent: calc($i/v.$grid-columns * 100%);
+  .col-#{$i} {
+    flex: 0 0 $percent;
+    max-width: $percent;
+  }
+}
+
 @each $key, $breakpoint in v.$grid-breakpoints {
     @media (min-width: $breakpoint) { 
       @for $i from 1 through v.$grid-columns {

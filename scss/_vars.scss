@@ -46,6 +46,7 @@ $colors: (
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
+  "light-gray": $gray-400,
   "gray-dark":  $gray-800
 ) !default;
 
@@ -75,6 +76,8 @@ $theme-colors: (
 
 $theme-colors-rgb: f.map-loop($theme-colors, toRgb);
 
+$link-color: $primary;
+$link-color-rgb: f.toRgb($link-color);
 
 
 $min-contrast-ration: 4.5 !default;
@@ -180,9 +183,10 @@ $h-color: null !default;
 $h-fw: $fw-semibold !default;
 $h-lineheight: 1.2 !default;
 
-$card-padding-inline: 2rem;
-$card-padding-block: 2rem;
+$card-padding-inline: 1.5rem;
+$card-padding-block: 1.5rem;
 $card-bg: transparent;
+$card-header-bg: rgba(var(--#{$prefix}light-gray-rgb), 1);
 $card-border-radius: 8px;
 $card-border: none;
 $card-shadow-color: rgba(0, 0, 0, .3);
