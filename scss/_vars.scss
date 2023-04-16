@@ -236,6 +236,9 @@ $form-color-width: f.toRem(48);
 $form-color-height: f.toRem(38);
 $form-color-padding: .25rem;
 
+$form-select-bg-size: 16px 12px;
+$form-select-bg-url: '../assets/icons/select-icon.svg';
+
 
 
 // Form check
@@ -268,3 +271,16 @@ $form-group-addon-border-radius: $form-control-border-radius;
 
 $form-group-addon-padding-sm: .25rem;
 $form-group-addon-padding-lg: .75rem;
+
+
+// Form range
+
+$form-range-thumb-width: 1rem;
+$form-range-thumb-height: $form-range-thumb-width;
+$form-range-thumb-bg: var(--#{$prefix}primary);
+$form-range-thumb-focus-shadow-width: .25rem;
+$form-range-thumb-focus-shadow: $form-control-focus-shadow;
+
+
+$form-range-track-bg: var(--#{$prefix}light-gray);
+$form-range-track-border-radius: 8px;

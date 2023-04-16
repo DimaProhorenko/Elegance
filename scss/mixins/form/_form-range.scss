@@ -1,0 +1,38 @@
+@use '../../vars' as v;
+
+.form__range {
+    background-color: v.$form-range-track-bg;
+    padding: 0;
+    width: 100%;
+    height: calc((v.$form-range-thumb-height + v.$form-range-thumb-focus-shadow-width) / 2);
+    border-radius: v.$form-range-track-border-radius;
+    -webkit-appearance: none;
+    appearance: none;
+
+
+    &:focus {
+        outline: none;
+
+        &::-webkit-slider-thumb { box-shadow: v.$form-range-thumb-focus-shadow; }
+        &::-moz-range-thumb { box-shadow: v.$form-range-thumb-focus-shadow; }
+    }
+
+    &::-webkit-slider-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: v.$form-range-thumb-width;
+        height: v.$form-range-thumb-height;
+        border-radius: 50%;
+        background: v.$form-range-thumb-bg;
+    }
+    
+    &::-moz-range-thumb {
+        appearance: none;
+        -webkit-appearance: none;
+        width: v.$form-range-thumb-width;
+        height: v.$form-range-thumb-height;
+        border-radius: 50%;
+        background: v.$form-range-thumb-bg;
+    }
+
+}
