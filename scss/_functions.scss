@@ -6,6 +6,19 @@ $prefix: ek-;
     @return calc($val / 16) + rem;
 }
 
+
+@function getLightness($clr) {
+    @return lightness($clr);
+}
+
+
+@function pickColor($clr, $lightClr, $darkClr, $checkVal: 50) {
+    @if (lightness($clr) <= $checkVal) {
+        @return $lightClr;
+    }
+    @return $darkClr;
+}
+
 @function tint-color($color, $weight) {
     @return mix(white, $color, $weight * 1%);
 }

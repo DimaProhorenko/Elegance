@@ -7,6 +7,9 @@
 $prefix: ek-;
 $dark-tint-val: 40;
 
+$transition-duration: 300ms;
+$transition-easing: ease-in-out;
+
 // Gray color vars
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -25,7 +28,7 @@ $blue:       #004fed !default;
 $indigo:  #7420b9 !default;
 $purple:  #C77DFF !default;
 $pink:    #d63384 !default;
-$red:     #fd0737 !default;
+$red:     #ff0000	 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #f4cd11 !default;
 $green:   #24af27 !default;
@@ -191,3 +194,21 @@ $card-border-radius: 8px;
 $card-border: none;
 $card-shadow-color: rgba(0, 0, 0, .3);
 $card-shadow: 5px 5px 20px $card-shadow-color;
+
+// Buttons
+
+$btn-padding-inline: 1.5rem;
+$btn-padding-block: 1rem;
+$btn-bg: transparent;
+$btn-border-radius: .5em;
+$btn-color: var(--#{$prefix}black);
+$btn-fs: 1rem;
+$btn-box-shadow: 4px 4px 15px rgba(0, 0, 0, .15);
+
+
+$btn-padding-inline-sm: 1rem;
+$btn-padding-block-sm: .5rem;
+$btn-fs-sm: .75rem;
+$btn-padding-inline-lg: 1.5rem;
+$btn-padding-block-lg: 1rem;
+$btn-fs-lg: 1.25rem;

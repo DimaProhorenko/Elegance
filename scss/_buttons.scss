@@ -1,0 +1,64 @@
+@use './vars' as v;
+@use './functions' as f;
+@use './mixins/button';
+@use './mixins/transition' as t;
+
+.btn {
+
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+
+    padding-inline: v.$btn-padding-inline;
+    padding-block: v.$btn-padding-block;
+
+    background-color: v.$btn-bg;
+    border: 1px solid transparent;
+    border-radius: v.$btn-border-radius;
+
+    color: v.$btn-color;
+    font-size: v.$btn-fs;
+
+    @include t.transition(background-color, v.$transition-duration, v.$transition-easing);
+
+    &--sm {
+        @include button.button-size(v.$btn-fs-sm, v.$btn-padding-inline-sm, v.$btn-padding-block-sm);
+    }
+
+    &--lg {
+        @include button.button-size(v.$btn-fs-lg, v.$btn-padding-inline-lg, v.$btn-padding-block-lg);
+    }
+
+    &:disabled,
+    &--disabled {
+        // filter: brightness(.6);
+        opacity: .3;
+        cursor: initial;
+        pointer-events: none;
+    }
+}
+
+@each $key, $value in v.$theme-colors {
+    .btn--#{$key} {
+        @include button.button-variant($value, var(--#{v.$prefix}white), var(--#{v.$prefix}black), f.tint-color($value, 30))
+    }
+}
+
+// Outline buttons
+
+@each $key, $value in v.$theme-colors {
+    .btn--outline-#{$key} {
+        border-color: $value;
+        color: #{$value};
+        transition-property: background-color, color;
+        transition-duration: v.$transition-duration;
+        transition-timing-function: v.$transition-easing;
+
+        &:hover {
+            background-color: #{$value};
+            color: f.pickColor($value, v.$white, v.$black);
+        }
+    }
+}

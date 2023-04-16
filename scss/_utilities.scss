@@ -152,6 +152,11 @@ $utilities: map-merge(
                 last: 6
             )
         ),
+        "gap": (
+            property: gap,
+            class: gap,
+            values: v.$spacers,
+        ),
         "margin": (
             property: margin,
             class: m,

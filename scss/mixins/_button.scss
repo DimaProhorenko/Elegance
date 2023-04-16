@@ -1,0 +1,25 @@
+@use '../vars' as v;
+@use '../functions' as f;
+
+@mixin button-variant(
+    $bg,
+    $clr,
+    $clr-dark,
+    $hover-bg,
+    $border: transparent,
+) {
+    background-color: $bg;
+    color: f.pickColor($bg, $clr, $clr-dark);
+    border: $border;
+
+    &:hover {
+        $hover-bg: f.pickColor($bg, f.tint-color($bg, 20), f.shade-color($bg, 20), 70);
+        background-color: $hover-bg;
+    }
+}
+
+@mixin button-size($fs, $padding-inline, $padding-block) {
+    font-size: $fs;
+    padding-inline: $padding-inline;
+    padding-block: $padding-block;
+}
