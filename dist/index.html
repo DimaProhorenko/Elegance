@@ -9,26 +9,73 @@
     <link rel="stylesheet" href="./css/elegance.css" />
   </head>
   <body data-ek-theme="light">
-    <div class="wrapper py-3">
-      <form action="" class="form mw-50">
-        <input type="color" class="form__control form__control--color" />
-        <select
-          name=""
-          id=""
-          class="my-3 form__control form__control--select"
-          disabled
-        >
-          <option value="Open this select menu" selected>
-            Open this select menu
-          </option>
-          <option value="1">one</option>
-          <option value="2">two</option>
-          <option value="3">three</option>
-        </select>
-
-        <label for="default-range" class="form__label">Default range</label>
-        <input type="range" id="default-range" class="form__range" />
+    <div class="wrapper d-flex jc-center py-5">
+      <form class="form" style="max-width: 850px">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="f-name" class="form__label">First name</label>
+            <input type="text" id="f-name" class="form__control" required />
+            <small class="form__error">Please fill out this field</small>
+          </div>
+          <div class="col-md-4">
+            <label for="l-name" class="form__label">Last name</label>
+            <input type="text" id="l-name" class="form__control" required />
+            <small class="form__error">Please fill out this field</small>
+          </div>
+          <div class="col-md-4">
+            <label for="username" class="form__label">Username</label>
+            <div class="form__group">
+              <span class="form__group-text">@</span>
+              <input type="text" id="username" class="form__control" required />
+            </div>
+            <small class="form__error">Please fill out this field</small>
+          </div>
+          <div class="col-md-6">
+            <label for="city" class="form__label">City</label>
+            <input type="text" id="city" class="form__control" required />
+            <small class="form__error">Please fill out this field</small>
+          </div>
+          <div class="col-md-3">
+            <label for="state" class="form__label">State</label>
+            <select
+              id="state"
+              class="form__control form__control--select"
+              required
+            >
+              <option selected disabled value="">Choose...</option>
+              <option value="Odessa">Odessa</option>
+              <option value="Kyiv">Kyiv</option>
+            </select>
+            <small class="form__error">Please select your city</small>
+          </div>
+          <div class="col-md-3">
+            <label for="zip" class="form__label">Zip</label>
+            <input type="text" class="form__control" required />
+            <small class="form__error">Please fill out this field</small>
+          </div>
+          <div class="col-12">
+            <div class="form__check">
+              <input
+                type="checkbox"
+                id="agree"
+                class="form__check-input"
+                required
+              />
+              <label for="agree" class="form__check-label"
+                >Agree to terms and conditions</label
+              >
+            </div>
+            <small class="form__error"
+              >You must agree before submitting.
+            </small>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn--primary">Submit</button>
+          </div>
+        </div>
       </form>
     </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>

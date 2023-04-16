@@ -1,0 +1,34 @@
+@use '../../vars' as v;
+
+.form {
+
+    &:invalid {
+        button[type='submit'] {
+            opacity: .5;
+            pointer-events: none;
+        }
+    }
+
+
+    &__error {
+        margin-block-start: .5em;
+        color: v.$form-control-invalid-color;
+        display: none;
+    }
+    
+    &__control.blurred:invalid {
+        box-shadow: v.$form-control-invalid-shadow;
+        color: v.$form-control-invalid-color;
+        border-color: v.$form-control-invalid-shadow-color;
+
+        &::placeholder {
+            color: inherit;
+        }
+    }
+    
+    .blurred:invalid + .form__error,
+    .form__group:has(.blurred:invalid) + .form__error {
+        display: block;
+    }
+
+}

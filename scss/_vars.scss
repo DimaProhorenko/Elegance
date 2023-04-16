@@ -5,7 +5,7 @@
 // Should follow the "$component-state-property-size" formula
 
 $prefix: ek-;
-$dark-tint-val: 40;
+$dark-tint-val: 60;
 
 $transition-duration: 300ms;
 $transition-easing: ease-in-out;
@@ -198,7 +198,7 @@ $card-shadow: 5px 5px 20px $card-shadow-color;
 // Buttons
 
 $btn-padding-inline: 1.5rem;
-$btn-padding-block: 1rem;
+$btn-padding-block: .75rem;
 $btn-bg: transparent;
 $btn-border-radius: .5em;
 $btn-color: var(--#{$prefix}dark);
@@ -215,6 +215,9 @@ $btn-fs-lg: 1.25rem;
 
 
 // Form
+
+// Form label
+$form-label-mb: .5em;
 
 // Form control
 $form-control-fs: 1rem;
@@ -284,3 +287,8 @@ $form-range-thumb-focus-shadow: $form-control-focus-shadow;
 
 $form-range-track-bg: var(--#{$prefix}light-gray);
 $form-range-track-border-radius: 8px;
+
+// Validation
+$form-control-invalid-color: var(--#{$prefix}danger);
+$form-control-invalid-shadow-color: rgba(var(--#{$prefix}danger-rgb), .25);
+$form-control-invalid-shadow: 0 0 0 .25rem $form-control-invalid-shadow-color;

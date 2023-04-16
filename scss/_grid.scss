@@ -10,9 +10,9 @@
 }
 
 [class*='col-'] {
-    min-height: 1px;
-    flex: 1;
+    flex-shrink: 0;
     width: 100%;
+    max-width: 100%;
     padding-inline: calc(var(--gutter-x) / 2);
     margin-block-start: var(--gutter-y);
 }

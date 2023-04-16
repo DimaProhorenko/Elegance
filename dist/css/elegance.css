@@ -86,22 +86,22 @@
 
 *[data-ek-theme=dark],
 [data-ek-theme=dark] {
-  --ek-primary: #6695f4;
-  --ek-secondary: #ac79d5;
-  --ek-success: #7ccf7d;
-  --ek-info: #7ccf7d;
-  --ek-warning: #ffec8d;
-  --ek-danger: #ff6666;
-  --ek-light: #7a7c7f;
-  --ek-dark: #fbfbfc;
-  --ek-primary-rgb: 102, 149, 244;
-  --ek-secondary-rgb: 172, 121, 213;
-  --ek-success-rgb: 124, 207, 125;
-  --ek-info-rgb: 124, 207, 125;
-  --ek-warning-rgb: 255, 236, 141;
-  --ek-danger-rgb: 255, 102, 102;
-  --ek-light-rgb: 122, 124, 127;
-  --ek-dark-rgb: 251, 251, 252;
+  --ek-primary: #99b9f8;
+  --ek-secondary: #c7a6e3;
+  --ek-success: #a7dfa9;
+  --ek-info: #a7dfa9;
+  --ek-warning: #fff2b3;
+  --ek-danger: #ff9999;
+  --ek-light: #a6a8a9;
+  --ek-dark: #fcfdfd;
+  --ek-primary-rgb: 153, 185, 248;
+  --ek-secondary-rgb: 199, 166, 227;
+  --ek-success-rgb: 167, 223, 169;
+  --ek-info-rgb: 167, 223, 169;
+  --ek-warning-rgb: 255, 242, 179;
+  --ek-danger-rgb: 255, 153, 153;
+  --ek-light-rgb: 166, 168, 169;
+  --ek-dark-rgb: 252, 253, 253;
   --ek-body-bg: #10002B;
   --ek-body-color: #fafafa;
 }
@@ -1473,9 +1473,9 @@ select {
 }
 
 [class*=col-] {
-  min-height: 1px;
-  flex: 1;
+  flex-shrink: 0;
   width: 100%;
+  max-width: 100%;
   padding-inline: calc(var(--gutter-x) / 2);
   margin-block-start: var(--gutter-y);
 }
@@ -1974,7 +1974,7 @@ select {
   display: inline-block;
   text-decoration: none;
   padding-inline: 1.5rem;
-  padding-block: 1rem;
+  padding-block: 0.75rem;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.5em;
@@ -2263,6 +2263,7 @@ select {
 
 .form__label {
   display: block;
+  margin-block-end: 0.5em;
 }
 
 .form__control {
@@ -2441,4 +2442,26 @@ select {
 .form__range:disabled {
   opacity: 0.6;
   pointer-events: none;
+}
+
+.form:invalid button[type=submit] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.form__error {
+  margin-block-start: 0.5em;
+  color: var(--ek-danger);
+  display: none;
+}
+.form__control.blurred:invalid {
+  box-shadow: 0 0 0 0.25rem rgba(var(--ek-danger-rgb), 0.25);
+  color: var(--ek-danger);
+  border-color: rgba(var(--ek-danger-rgb), 0.25);
+}
+.form__control.blurred:invalid::placeholder {
+  color: inherit;
+}
+.form .blurred:invalid + .form__error,
+.form .form__group:has(.blurred:invalid) + .form__error {
+  display: block;
 }
