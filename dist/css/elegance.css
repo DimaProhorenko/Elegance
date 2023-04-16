@@ -1977,7 +1977,7 @@ select {
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 0.5em;
-  color: var(--ek-black);
+  color: var(--ek-dark);
   font-size: 1rem;
   transition: background-color 300ms ease-in-out;
 }
@@ -1991,6 +1991,11 @@ select {
   padding-inline: 1.5rem;
   padding-block: 1rem;
 }
+.btn--check {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
 .btn:disabled, .btn--disabled {
   opacity: 0.3;
   cursor: initial;
@@ -2002,7 +2007,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--primary:hover {
+.btn--primary:hover, .btn--primary.active {
   background-color: #3372f1;
 }
 
@@ -2011,7 +2016,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--secondary:hover {
+.btn--secondary:hover, .btn--secondary.active {
   background-color: #904dc7;
 }
 
@@ -2020,7 +2025,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--success:hover {
+.btn--success:hover, .btn--success.active {
   background-color: #50bf52;
 }
 
@@ -2029,7 +2034,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--info:hover {
+.btn--info:hover, .btn--info.active {
   background-color: #88c367;
 }
 
@@ -2038,7 +2043,7 @@ select {
   color: var(--ek-black);
   border: transparent;
 }
-.btn--warning:hover {
+.btn--warning:hover, .btn--warning.active {
   background-color: #f6d741;
 }
 
@@ -2047,7 +2052,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--danger:hover {
+.btn--danger:hover, .btn--danger.active {
   background-color: #ff3333;
 }
 
@@ -2056,7 +2061,7 @@ select {
   color: var(--ek-black);
   border: transparent;
 }
-.btn--light:hover {
+.btn--light:hover, .btn--light.active {
   background-color: #c6c7c8;
 }
 
@@ -2065,7 +2070,7 @@ select {
   color: var(--ek-white);
   border: transparent;
 }
-.btn--dark:hover {
+.btn--dark:hover, .btn--dark.active {
   background-color: #4d5154;
 }
 
@@ -2076,7 +2081,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-primary:hover {
+.btn--outline-primary:hover, .btn--outline-primary.active, .btn--check + .btn--outline-primary:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-primary {
   background-color: #004fed;
   color: #fff;
 }
@@ -2088,7 +2096,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-secondary:hover {
+.btn--outline-secondary:hover, .btn--outline-secondary.active, .btn--check + .btn--outline-secondary:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-secondary {
   background-color: #7420b9;
   color: #fff;
 }
@@ -2100,7 +2111,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-success:hover {
+.btn--outline-success:hover, .btn--outline-success.active, .btn--check + .btn--outline-success:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-success {
   background-color: #24af27;
   color: #fff;
 }
@@ -2112,7 +2126,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-info:hover {
+.btn--outline-info:hover, .btn--outline-info.active, .btn--check + .btn--outline-info:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-info {
   background-color: #6ab441;
   color: #fff;
 }
@@ -2124,7 +2141,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-warning:hover {
+.btn--outline-warning:hover, .btn--outline-warning.active, .btn--check + .btn--outline-warning:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-warning {
   background-color: #f4cd11;
   color: #000;
 }
@@ -2136,7 +2156,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-danger:hover {
+.btn--outline-danger:hover, .btn--outline-danger.active, .btn--check + .btn--outline-danger:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-danger {
   background-color: #ff0000;
   color: #fff;
 }
@@ -2148,7 +2171,10 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-light:hover {
+.btn--outline-light:hover, .btn--outline-light.active, .btn--check + .btn--outline-light:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-light {
   background-color: #f8f9fa;
   color: #000;
 }
@@ -2160,7 +2186,25 @@ select {
   transition-duration: 300ms;
   transition-timing-function: ease-in-out;
 }
-.btn--outline-dark:hover {
+.btn--outline-dark:hover, .btn--outline-dark.active, .btn--check + .btn--outline-dark:hover {
+  filter: brightness(1.2);
+}
+.btn--check:checked + .btn--outline-dark {
   background-color: #212529;
   color: #fff;
+}
+
+.btn-group {
+  display: flex;
+}
+.btn-group > .btn {
+  border-radius: 0;
+}
+.btn-group > .btn:first-of-type {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+.btn-group > .btn:last-of-type {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }

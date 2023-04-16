@@ -31,6 +31,13 @@
         @include button.button-size(v.$btn-fs-lg, v.$btn-padding-inline-lg, v.$btn-padding-block-lg);
     }
 
+
+    &--check {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+    }
+
     &:disabled,
     &--disabled {
         // filter: brightness(.6);
@@ -56,9 +63,34 @@
         transition-duration: v.$transition-duration;
         transition-timing-function: v.$transition-easing;
 
-        &:hover {
+        &:hover,
+        &.active,
+        .btn--check + &:hover {
+            filter: brightness(1.2);
+        }
+        .btn--check:checked + & {
             background-color: #{$value};
             color: f.pickColor($value, v.$white, v.$black);
         }
     }
+}
+
+
+.btn-group {
+    display: flex;
+
+    & > .btn {
+        border-radius: 0;
+
+        &:first-of-type {
+            border-top-left-radius: v.$btn-border-radius;
+            border-bottom-left-radius: v.$btn-border-radius;
+        }
+        &:last-of-type {
+            border-top-right-radius: v.$btn-border-radius;
+            border-bottom-right-radius: v.$btn-border-radius;
+        }
+    }
+
+    
 }

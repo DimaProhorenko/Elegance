@@ -10,23 +10,42 @@
   </head>
   <body data-ek-theme="light">
     <div class="wrapper py-3">
-      <div class="d-flex gap-2 flex-wrap jc-center">
-        <button class="btn">Hello</button>
-        <button class="btn btn--primary" disabled>Hello</button>
-        <button class="btn btn--secondary">Hello</button>
-        <button class="btn btn--success">Hello</button>
-        <button class="btn btn--info">Hello</button>
-        <button class="btn btn--warning">Hello</button>
-        <button class="btn btn--danger btn--disabled">Danger</button>
-        <button class="btn btn--light">Danger</button>
-        <button class="btn btn--dark">Danger</button>
+      <div class="btn-group">
+        <input type="checkbox" class="btn--check" id="btncheck1" />
+        <label for="btncheck1" class="btn btn--outline-primary"
+          >Checkbox 1</label
+        >
+        <input type="checkbox" class="btn--check" id="btncheck2" />
+        <label for="btncheck2" class="btn btn--outline-primary"
+          >Checkbox 2</label
+        >
+        <input type="checkbox" class="btn--check" id="btncheck3" />
+        <label for="btncheck3" class="btn btn--outline-primary"
+          >Checkbox 3</label
+        >
       </div>
-      <div class="d-flex gap-2 flex-wrap ai-center jc-center mt-5">
-        <a href="#" class="btn btn--outline-primary">Outline</a>
-        <button class="btn btn--outline-secondary">Secondary</button>
-        <a href="#" class="btn btn--outline-danger">Danger</a>
-        <button class="btn btn--outline-warning btn--sm">Small</button>
-        <button class="btn btn--outline-dark btn--lg" disabled>Large</button>
+
+      <div class="btn-group mt-5">
+        <input type="checkbox" id="btncheck4" class="btn--check" />
+        <label for="btncheck4" class="btn btn--outline-warning">Warning</label>
+
+        <input type="checkbox" id="btncheck5" class="btn--check" />
+        <label for="btncheck5" class="btn btn--outline-success">Success</label>
+
+        <input type="checkbox" id="btncheck6" class="btn--check" />
+        <label for="btncheck6" class="btn btn--outline-danger">Danger</label>
+      </div>
+      <div class="btn-group mt-5">
+        <input type="radio" id="btncheck7" class="btn--check" name="radio-1" />
+        <label for="btncheck7" class="btn btn--outline-primary"
+          >Undefined</label
+        >
+
+        <input type="radio" id="btncheck8" class="btn--check" name="radio-1" />
+        <label for="btncheck8" class="btn btn--outline-primary">Male</label>
+
+        <input type="radio" id="btncheck9" class="btn--check" name="radio-1" />
+        <label for="btncheck9" class="btn btn--outline-primary">Female</label>
       </div>
     </div>
   </body>
