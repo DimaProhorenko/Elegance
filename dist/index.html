@@ -10,43 +10,29 @@
   </head>
   <body data-ek-theme="light">
     <div class="wrapper py-3">
-      <div class="btn-group">
-        <input type="checkbox" class="btn--check" id="btncheck1" />
-        <label for="btncheck1" class="btn btn--outline-primary"
-          >Checkbox 1</label
-        >
-        <input type="checkbox" class="btn--check" id="btncheck2" />
-        <label for="btncheck2" class="btn btn--outline-primary"
-          >Checkbox 2</label
-        >
-        <input type="checkbox" class="btn--check" id="btncheck3" />
-        <label for="btncheck3" class="btn btn--outline-primary"
-          >Checkbox 3</label
-        >
-      </div>
+      <form action="" class="form mw-50">
+        <input
+          type="text"
+          class="form__control form__control--lg"
+          placeholder="Your name"
+        />
+        <input type="text" class="form__control my-3" placeholder="Your name" />
 
-      <div class="btn-group mt-5">
-        <input type="checkbox" id="btncheck4" class="btn--check" />
-        <label for="btncheck4" class="btn btn--outline-warning">Warning</label>
+        <input
+          type="text"
+          class="form__control form__control--sm"
+          placeholder="Your name"
+        />
 
-        <input type="checkbox" id="btncheck5" class="btn--check" />
-        <label for="btncheck5" class="btn btn--outline-success">Success</label>
+        <div class="form__check mt-3">
+          <input type="checkbox" class="form__check-input" id="checkbox-try" />
+          <label for="checkbox-try" class="form__check-label"
+            >Default checkbox</label
+          >
+        </div>
+      </form>
 
-        <input type="checkbox" id="btncheck6" class="btn--check" />
-        <label for="btncheck6" class="btn btn--outline-danger">Danger</label>
-      </div>
-      <div class="btn-group mt-5">
-        <input type="radio" id="btncheck7" class="btn--check" name="radio-1" />
-        <label for="btncheck7" class="btn btn--outline-primary"
-          >Undefined</label
-        >
-
-        <input type="radio" id="btncheck8" class="btn--check" name="radio-1" />
-        <label for="btncheck8" class="btn btn--outline-primary">Male</label>
-
-        <input type="radio" id="btncheck9" class="btn--check" name="radio-1" />
-        <label for="btncheck9" class="btn btn--outline-primary">Female</label>
-      </div>
+      <p>&check;</p>
     </div>
   </body>
 </html>

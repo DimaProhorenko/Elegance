@@ -78,9 +78,10 @@
   --ek-secondary-emphasis-rgb: 172, 121, 213;
   --ek-white-rgb: 255, 255, 255;
   --ek-body-color: #212529;
-  --ek-body-bg: #dee2e6;
+  --ek-body-bg: #e9ecef;
   --ek-link-color: #004fed;
   --ek-link-color-rbg: 0, 79, 237;
+  --ek-form-control-border-color: #adb5bd;
 }
 
 *[data-ek-theme=dark],
@@ -2207,4 +2208,86 @@ select {
 .btn-group > .btn:last-of-type {
   border-top-right-radius: 0.5em;
   border-bottom-right-radius: 0.5em;
+}
+
+.form__control {
+  appearance: none;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  width: 100%;
+  padding-block: 0.5rem;
+  padding-inline: 1.5rem;
+  font-size: 1rem;
+  color: var(--ek-body-color);
+  background-color: transparent;
+  border: 1px solid var(--ek-form-control-border-color);
+  border-radius: 8px;
+  box-shadow: 0 0 0 0.25rem transparent;
+  transition-property: box-shadow, border-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.form__control:not(:disabled) {
+  cursor: pointer;
+}
+.form__control:hover {
+  border-color: var(--ek-primary);
+}
+.form__control:focus {
+  border-color: rgba(0, 79, 237, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(0, 79, 237, 0.25);
+}
+.form__control::placeholder {
+  color: var(--ek-dark);
+  font-size: 1em;
+}
+.form__control--lg {
+  font-size: 1.25rem;
+}
+.form__control--sm {
+  font-size: 0.85rem;
+}
+
+.form__check {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.form__check-input {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  position: relative;
+  background-color: transparent;
+  border: 1px solid var(--ek-form-control-border-color);
+  border-radius: calc(1.125rem / 3);
+  box-shadow: 0 0 0 0.25rem transparent;
+  transition: box-shadow 300ms ease-in-out;
+}
+.form__check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 79, 237, 0.25);
+}
+.form__check-input[type=checkbox]::before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  background-color: #f8f9fa;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  scale: 0;
+  z-index: 1;
+}
+.form__check-input:checked {
+  background-color: var(--ek-primary);
+}
+.form__check-input:checked::before {
+  scale: 1;
 }

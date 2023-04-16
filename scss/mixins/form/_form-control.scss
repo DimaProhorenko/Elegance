@@ -1,0 +1,48 @@
+@use '../../vars' as v;
+
+.form__control {
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    outline: none;
+    width: 100%;
+
+    padding-block: v.$form-control-padding-block;
+    padding-inline: v.$form-control-padding-inline;
+
+    font-size: v.$form-control-fs;
+    color: v.$form-control-color;
+    background-color: v.$form-control-bg;
+    border: v.$form-control-border;
+    border-radius: v.$form-control-border-radius;
+    box-shadow: v.$form-control-shadow;
+    transition-property: box-shadow, border-color;
+    transition-duration: v.$transition-duration;
+    transition-timing-function: v.$transition-easing;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:hover {
+        border-color: var(--#{v.$prefix}primary);
+    }
+
+    &:focus {
+        border-color: v.$form-control-shadow-color;
+        box-shadow: v.$form-control-focus-shadow;
+    }
+
+    &::placeholder {
+        color: v.$form-control-placeholder-color;
+        font-size: 1em;
+    }
+
+    &--lg {
+        font-size: 1.25rem;
+    }
+
+    &--sm {
+        font-size: .85rem;
+    }
+}
