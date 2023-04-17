@@ -21,8 +21,17 @@ $theme-colors-dark: (
     'info': $info,
     'warning': $warning,
     'danger': $danger,
-    'light': $light,
-    'dark': $dark
+    
 ) !default; 
+
+$text-colors-dark: (
+    primary-emphasis: v.$text-primary-emphasis-color,
+    secondary-emphasis: v.$text-secondary-emphasis-color,
+    base-1: v.$gray-100,
+    base-2: v.$gray-300,
+    base-3: v.$gray-600,
+    base-4: v.$gray-900
+    
+) !default;
 
 $theme-colors-dark-rgb: f.map-loop($theme-colors-dark, toRgb);

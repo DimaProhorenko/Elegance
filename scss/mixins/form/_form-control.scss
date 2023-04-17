@@ -70,6 +70,7 @@
     }
 
     &--select {
+        color: var(--#{v.$prefix}dark);
         background-size: v.$form-select-bg-size;
         background-repeat: no-repeat;
         background-position: right .75rem center;

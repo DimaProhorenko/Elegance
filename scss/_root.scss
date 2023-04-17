@@ -58,6 +58,10 @@
         --#{v.$prefix + $color}-rgb: #{$value};
     }
 
+    @each $color, $value in vd.$text-colors-dark {
+        --#{v.$prefix + $color}: #{$value};
+    }
+
     --#{v.$prefix}body-bg: #{vd.$body-bg-dark};
     --#{v.$prefix}body-color: #{vd.$body-color};
 }

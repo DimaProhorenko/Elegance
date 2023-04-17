@@ -95,10 +95,15 @@ $text-secondary-emphasis-color: f.tint-color($text-secondary-color, 40) !default
 $text-light: $gray-600;
 $text-lighter: $gray-200;
 
+
+
 $text-colors: (
     primary-emphasis: $text-primary-emphasis-color,
     secondary-emphasis: $text-secondary-emphasis-color,
-    'white': $white,
+    base-1: $gray-900,
+    base-2: $gray-600,
+    base-3: $gray-300,
+    base-4: $gray-100
     
 ) !default;
 
@@ -234,7 +239,7 @@ $form-control-padding-inline: 1.5rem;
 $form-control-padding-block: .5rem;
 $form-control-color: var(--#{$prefix}body-color);
 $form-control-bg: transparent;
-$form-control-border: 1px solid var(--#{$prefix}form-control-border-color);
+$form-control-border: 1px solid var(--#{$prefix}form-control-border);
 $form-control-border-radius: 8px;
 $form-control-shadow-color: rgba($primary, .25);
 $form-control-shadow: 0 0 0 .25rem transparent;
@@ -278,7 +283,7 @@ $form-check-label-fs-lg: 1.25rem;
 
 // Form group
 $form-group-addon-padding: .5rem;
-$form-group-addon-bg: var(--#{$prefix}light-gray);
+$form-group-addon-bg: var(--#{$prefix}base-3);
 $form-group-addon-border-radius: $form-control-border-radius;
 
 $form-group-addon-padding-sm: .25rem;
