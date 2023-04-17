@@ -77,6 +77,10 @@
   --ek-primary-emphasis-rgb: 102, 149, 244;
   --ek-secondary-emphasis-rgb: 172, 121, 213;
   --ek-white-rgb: 255, 255, 255;
+  --ek-form-control-border: #343a40;
+  --ek-form-invalid-color: #ea868f;
+  --ek-form-control-border-rgb: 52, 58, 64;
+  --ek-form-invalid-color-rgb: 234, 134, 143;
   --ek-body-color: #212529;
   --ek-body-bg: #e9ecef;
   --ek-link-color: #004fed;
@@ -102,7 +106,7 @@
   --ek-danger-rgb: 255, 153, 153;
   --ek-light-rgb: 166, 168, 169;
   --ek-dark-rgb: 252, 253, 253;
-  --ek-body-bg: #10002B;
+  --ek-body-bg: #212529;
   --ek-body-color: #fafafa;
 }
 
@@ -2277,7 +2281,7 @@ select {
   font-size: 1rem;
   color: var(--ek-body-color);
   background-color: transparent;
-  border: 1px solid var(--ek-form-control-border-color);
+  border: 1px solid var(--ek-form-control-border);
   border-radius: 8px;
   box-shadow: 0 0 0 0.25rem transparent;
   transition-property: box-shadow, border-color;
@@ -2295,7 +2299,7 @@ select {
   border-color: var(--ek-primary);
 }
 .form__control:focus {
-  border-color: rgba(0, 79, 237, 0.25);
+  border-color: var(--ek-primary);
   box-shadow: 0 0 0 0.25rem rgba(0, 79, 237, 0.25);
 }
 .form__control::placeholder {
@@ -2450,13 +2454,14 @@ select {
 }
 .form__error {
   margin-block-start: 0.5em;
-  color: var(--ek-danger);
+  color: var(--ek-form-invalid-color);
   display: none;
 }
 .form__control.blurred:invalid {
-  box-shadow: 0 0 0 0.25rem rgba(var(--ek-danger-rgb), 0.25);
-  color: var(--ek-danger);
-  border-color: rgba(var(--ek-danger-rgb), 0.25);
+  --ek-form-control-border: var(--ek-form-invalid-color);
+  box-shadow: 0 0 0 0.25rem rgba(var(--ek-form-invalid-color-rgb), 0.25);
+  color: var(--ek-form-invalid-color);
+  border-color: var(--ek-form-control-border);
 }
 .form__control.blurred:invalid::placeholder {
   color: inherit;

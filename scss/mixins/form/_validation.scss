@@ -17,9 +17,10 @@
     }
     
     &__control.blurred:invalid {
+        --#{v.$prefix}form-control-border: var(--#{v.$prefix}form-invalid-color);
         box-shadow: v.$form-control-invalid-shadow;
         color: v.$form-control-invalid-color;
-        border-color: v.$form-control-invalid-shadow-color;
+        border-color: var(--#{v.$prefix}form-control-border);
 
         &::placeholder {
             color: inherit;

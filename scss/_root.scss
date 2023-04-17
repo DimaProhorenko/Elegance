@@ -29,6 +29,14 @@
         --#{v.$prefix}#{$color}-rgb: #{$value};
     }
 
+    @each $color, $value in v.$form-colors {
+        --#{v.$prefix + $color}: #{$value};
+    }
+
+    @each $color, $value in v.$form-colors-rgb {
+        --#{v.$prefix + $color}-rgb: #{$value};
+    }
+
     --#{v.$prefix}body-color: #{v.$body-color};
     --#{v.$prefix}body-bg: #{v.$body-bg};
     --#{v.$prefix}link-color: #{v.$link-color};

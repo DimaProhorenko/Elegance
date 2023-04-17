@@ -104,6 +104,15 @@ $text-colors: (
 
 $text-colors-rgb: f.map-loop($text-colors, toRgb);
 
+// Form colors
+
+$form-colors: (
+    'form-control-border': $gray-800,
+    'form-invalid-color': #ea868f,
+);
+
+$form-colors-rgb: f.map-loop($form-colors, toRgb);
+
 
 // Body
 $body-color:                $gray-900 !default;
@@ -289,6 +298,6 @@ $form-range-track-bg: var(--#{$prefix}light-gray);
 $form-range-track-border-radius: 8px;
 
 // Validation
-$form-control-invalid-color: var(--#{$prefix}danger);
-$form-control-invalid-shadow-color: rgba(var(--#{$prefix}danger-rgb), .25);
+$form-control-invalid-color: var(--#{$prefix}form-invalid-color);
+$form-control-invalid-shadow-color: rgba(var(--#{$prefix}form-invalid-color-rgb), .25);
 $form-control-invalid-shadow: 0 0 0 .25rem $form-control-invalid-shadow-color;

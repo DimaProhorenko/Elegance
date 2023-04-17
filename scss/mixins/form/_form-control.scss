@@ -13,7 +13,7 @@
     font-size: v.$form-control-fs;
     color: v.$form-control-color;
     background-color: v.$form-control-bg;
-    border: v.$form-control-border;
+    border: 1px solid var(--#{v.$prefix}form-control-border);
     border-radius: v.$form-control-border-radius;
     box-shadow: v.$form-control-shadow;
     transition-property: box-shadow, border-color;
@@ -34,7 +34,7 @@
     }
 
     &:focus {
-        border-color: v.$form-control-shadow-color;
+        border-color: var(--#{v.$prefix}primary);
         box-shadow: v.$form-control-focus-shadow;
     }
 
