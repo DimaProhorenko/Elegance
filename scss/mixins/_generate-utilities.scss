@@ -11,12 +11,13 @@
     $property: map-get($utility, property);
 
     $class: if(map-has-key($utility, class), map-get($utility, class), '');
-    $infix: if(map-has-key($utility, infix), map-get($utility, infix), '-');
+    $infix: if(map-has-key($utility, class), '-', '');
     $css-var: if(map-has-key($utility, css-var), map-get($utility, class), null);
     $local-vars: map-get($utility, local-vars);
     $states: map-get($utility, state);
 
     @each $key, $value in $values {
+        
         @if $css-var {
 
             .#{$class + $infix + $key} {

@@ -1,0 +1,17 @@
+@use './vars' as v;
+
+.badge {
+    --#{v.$prefix}badge-bg: #{v.$badge-bg};
+    --#{v.$prefix}badge-color: #{v.$badge-color};
+    --#{v.$prefix}badge-font-size: #{v.$badge-font-size};
+    --#{v.$prefix}badge-border-radius: #{v.$badge-border-radius};
+
+    display: inline-block;
+    padding-inline: v.$badge-padding-inline;
+    padding-block: v.$badge-padding-block;
+    background-color: var(--#{v.$prefix}badge-bg);
+    border-radius: var(--#{v.$prefix}badge-border-radius);
+
+    color: var(--#{v.$prefix}badge-color);
+    font-size: var(--#{v.$prefix}badge-font-size);
+}

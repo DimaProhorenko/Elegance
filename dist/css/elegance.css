@@ -92,6 +92,7 @@
   --ek-link-color: #004fed;
   --ek-link-color-rbg: 0, 79, 237;
   --ek-form-control-border-color: #adb5bd;
+  --ek-form-control-invalid-icon: ../assets/icons/error.png;
 }
 
 *[data-ek-theme=dark],
@@ -273,24 +274,116 @@ select {
   display: none !important;
 }
 
-.-static {
+.static {
   position: static !important;
 }
 
-.-relative {
+.relative {
   position: relative !important;
 }
 
-.-absolute {
+.absolute {
   position: absolute !important;
 }
 
-.-fixed {
+.fixed {
   position: fixed !important;
 }
 
-.-sticky {
+.sticky {
   position: sticky !important;
+}
+
+.top-0 {
+  top: 0 !important;
+}
+
+.top-25 {
+  top: 25% !important;
+}
+
+.top-50 {
+  top: 50% !important;
+}
+
+.top-75 {
+  top: 75% !important;
+}
+
+.top-100 {
+  top: 100% !important;
+}
+
+.start-0 {
+  left: 0 !important;
+}
+
+.start-25 {
+  left: 25% !important;
+}
+
+.start-50 {
+  left: 50% !important;
+}
+
+.start-75 {
+  left: 75% !important;
+}
+
+.start-100 {
+  left: 100% !important;
+}
+
+.end-0 {
+  right: 0 !important;
+}
+
+.end-25 {
+  right: 25% !important;
+}
+
+.end-50 {
+  right: 50% !important;
+}
+
+.end-75 {
+  right: 75% !important;
+}
+
+.end-100 {
+  right: 100% !important;
+}
+
+.bot-0 {
+  bottom: 0 !important;
+}
+
+.bot-25 {
+  bottom: 25% !important;
+}
+
+.bot-50 {
+  bottom: 50% !important;
+}
+
+.bot-75 {
+  bottom: 75% !important;
+}
+
+.bot-100 {
+  bottom: 100% !important;
+}
+
+.translate-middle {
+  translate: -50% -50% !important;
+}
+
+.translate-x-middle {
+  translate: -50% 0 !important;
+}
+
+.translate-y-middle {
+  translate: 0 -50% !important;
 }
 
 .w-25 {
@@ -345,7 +438,7 @@ select {
   max-height: 100% !important;
 }
 
-.-flex {
+.flex {
   flex: 1 1 auto !important;
 }
 
@@ -909,15 +1002,15 @@ select {
   text-align: right !important;
 }
 
-.-none {
+.none {
   text-decoration: none !important;
 }
 
-.-underline {
+.underline {
   text-decoration: underline !important;
 }
 
-.-line-through {
+.line-through {
   text-decoration: line-through !important;
 }
 
@@ -1094,7 +1187,7 @@ select {
   --ek-text-opacity: 1;
 }
 
-.link {
+.link- {
   --ek-text-opacity: 1;
 }
 
@@ -2543,6 +2636,10 @@ select {
   box-shadow: 0 0 0 0.25rem rgba(var(--ek-form-invalid-color-rgb), 0.25);
   color: var(--ek-form-invalid-color);
   border-color: var(--ek-form-control-border);
+  background-image: url("../assets/icons/error.png");
+  background-size: 22px 18px;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
 }
 .form__control.blurred:invalid::placeholder {
   color: inherit;
@@ -2550,4 +2647,18 @@ select {
 .form .blurred:invalid + .form__error,
 .form .form__group:has(.blurred:invalid) + .form__error {
   display: block;
+}
+
+.badge {
+  --ek-badge-bg: #6c757d;
+  --ek-badge-color: #f8f9fa;
+  --ek-badge-font-size: 0.75em;
+  --ek-badge-border-radius: 10px;
+  display: inline-block;
+  padding-inline: 0.65em;
+  padding-block: 0.35em;
+  background-color: var(--ek-badge-bg);
+  border-radius: var(--ek-badge-border-radius);
+  color: var(--ek-badge-color);
+  font-size: var(--ek-badge-font-size);
 }

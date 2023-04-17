@@ -31,6 +31,59 @@ $utilities: map-merge(
             property: position,
             values: static relative absolute fixed sticky
         ),
+        "top": (
+            property: top,
+            class: top,
+            values: (
+                0: 0,
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "left": (
+            property: left,
+            class: start,
+            values: (
+                0: 0,
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "right": (
+            property: right,
+            class: end,
+            values: (
+                0: 0,
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "bottom": (
+            property: bottom,
+            class: bot,
+            values: (
+                0: 0,
+                25: 25%,
+                50: 50%,
+                75: 75%,
+                100: 100%
+            )
+        ),
+        "translate": (
+            property: translate,
+            class: translate,
+            values: (
+                middle: -50% -50%,
+                x-middle: -50% 0,
+                y-middle: 0 -50%
+            )
+        ),
         "width": (
             property: width,
             class: w,

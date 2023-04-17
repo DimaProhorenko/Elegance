@@ -21,6 +21,10 @@
         box-shadow: v.$form-control-invalid-shadow;
         color: v.$form-control-invalid-color;
         border-color: var(--#{v.$prefix}form-control-border);
+        background-image: url(v.$form-control-invalid-icon);
+        background-size: v.$form-control-invalid-icon-size;
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
 
         &::placeholder {
             color: inherit;

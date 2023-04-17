@@ -306,3 +306,13 @@ $form-range-track-border-radius: 8px;
 $form-control-invalid-color: var(--#{$prefix}form-invalid-color);
 $form-control-invalid-shadow-color: rgba(var(--#{$prefix}form-invalid-color-rgb), .25);
 $form-control-invalid-shadow: 0 0 0 .25rem $form-control-invalid-shadow-color;
+$form-control-invalid-icon: '../assets/icons/error.png';
+$form-control-invalid-icon-size: 22px 18px;
+
+// Badge
+$badge-padding-block: .35em;
+$badge-padding-inline: .65em;
+$badge-font-size: .75em;
+$badge-color: $light;
+$badge-bg: $gray-600;
+$badge-border-radius: 10px;
