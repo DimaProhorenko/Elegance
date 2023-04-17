@@ -4126,6 +4126,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-xs .navbar__li {
     padding-block: 0;
@@ -4152,6 +4153,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-sm .navbar__li {
     padding-block: 0;
@@ -4178,6 +4180,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-md .navbar__li {
     padding-block: 0;
@@ -4204,6 +4207,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-lg .navbar__li {
     padding-block: 0;
@@ -4230,6 +4234,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-xl .navbar__li {
     padding-block: 0;
@@ -4256,6 +4261,7 @@ select {
     max-height: 100%;
     width: fit-content;
     flex-direction: row;
+    overflow: unset;
   }
   .navbar--expand-xxl .navbar__li {
     padding-block: 0;
