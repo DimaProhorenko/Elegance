@@ -1,0 +1,63 @@
+@use './vars' as v;
+
+@each $bp-key, $bp-value in v.$grid-breakpoints {
+    @each $spacer-key, $spacer-val in v.$spacers {
+        @if ($bp-value > 0) {
+            @media screen and (min-width: $bp-value) {
+                .m-#{$bp-key}-#{$spacer-key} {
+                    margin: $spacer-val !important;
+                }
+                .mx-#{$bp-key}-#{$spacer-key} {
+                    margin-inline: $spacer-val !important;
+                }
+                
+                .my-#{$bp-key}-#{$spacer-key} {
+                    margin-block: $spacer-val !important;
+                }
+    
+                .ml-#{$bp-key}-#{$spacer-key} {
+                    margin-inline-start: $spacer-val !important;
+                }
+    
+                .mr-#{$bp-key}-#{$spacer-key} {
+                    margin-inline-end: $spacer-val !important;
+                }
+    
+                .mt-#{$bp-key}-#{$spacer-key} {
+                    margin-block-start: $spacer-val !important;
+                }
+    
+                .mb-#{$bp-key}-#{$spacer-key} {
+                    margin-block-end: $spacer-val !important;
+                }
+
+                .p-#{$bp-key}-#{$spacer-key} {
+                    padding: $spacer-val !important;
+                }
+                .px-#{$bp-key}-#{$spacer-key} {
+                    padding-inline: $spacer-val !important;
+                }
+                
+                .py-#{$bp-key}-#{$spacer-key} {
+                    padding-block: $spacer-val !important;
+                }
+    
+                .pl-#{$bp-key}-#{$spacer-key} {
+                    padding-inline-start: $spacer-val !important;
+                }
+    
+                .pr-#{$bp-key}-#{$spacer-key} {
+                    padding-inline-end: $spacer-val !important;
+                }
+    
+                .pt-#{$bp-key}-#{$spacer-key} {
+                    padding-block-start: $spacer-val !important;
+                }
+    
+                .pb-#{$bp-key}-#{$spacer-key} {
+                    padding-block-end: $spacer-val !important;
+                }
+            }
+        }
+    }
+}

@@ -334,3 +334,9 @@ $navbar-link-expanded-size: 1rem;
 $navbar-link-padding-inline: .35rem;
 
 $navbar-li-me: .25em;
+
+$navbar-toggler-width: f.toRem(30);
+$navbar-toggler-height: $navbar-toggler-width;
+$navbar-toggler-line-width: f.toRem(20);
+$navbar-toggler-line-height: f.toRem(3);
+$navbar-toggler-line-bg: var(--#{$prefix}body-color);

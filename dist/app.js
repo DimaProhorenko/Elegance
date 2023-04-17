@@ -13,7 +13,6 @@ if (form) {
             addOnlyUniqueClass(e.target, 'blurred');
         })
     })
-    console.log(requiredInputs);
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -27,9 +26,12 @@ const collapseTogglers = document.querySelectorAll('[data-ek-toggle]');
 collapseToggleHandler = e => {
     if (e.target.tagName === 'A') e.preventDefault();
 
+
     const target = e.target.dataset.ekTarget || '#' + e.target.href.split('#')[1];
 
     const targetCollapse = document.querySelector(target);
+
+    if (e.target.classList.contains('navbar__toggler')) e.target.classList.toggle('open');
     
     if (targetCollapse.classList.contains('show')) {
         targetCollapse.classList.remove('show');

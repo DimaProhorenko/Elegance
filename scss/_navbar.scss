@@ -16,6 +16,12 @@
 
     --#{v.$prefix}navbar-li-me: #{v.$navbar-li-me};
 
+    --#{v.$prefix}navbar-toggler-width: #{v.$navbar-toggler-width};
+    --#{v.$prefix}navbar-toggler-height: #{v.$navbar-toggler-height};
+    --#{v.$prefix}navbar-toggler-line-width: #{v.$navbar-toggler-line-width};
+    --#{v.$prefix}navbar-toggler-line-height: #{v.$navbar-toggler-line-height};
+    --#{v.$prefix}navbar-toggler-line-bg: #{v.$navbar-toggler-line-bg};
+
     padding-inline: var(--#{v.$prefix}navbar-padding-inline);
     padding-block: var(--#{v.$prefix}navbar-padding-block);
     background-color: var(--#{v.$prefix}navbar-bg);
@@ -42,6 +48,51 @@
         &:hover {
             text-decoration: none;
             color: var(--#{v.$prefix}navbar-brand-hover-color);
+        }
+    }
+
+    &__toggler {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        width: var(--#{v.$prefix}navbar-toggler-width);
+        height: var(--#{v.$prefix}navbar-toggler-height);
+        transition: rotate v.$transition-duration v.$transition-easing;
+
+        &-line {
+            width: var(--#{v.$prefix}navbar-toggler-line-width);
+            height: var(--#{v.$prefix}navbar-toggler-line-height);
+            background-color: var(--#{v.$prefix}navbar-toggler-line-bg);
+            pointer-events: none;
+
+            &-mid {
+                margin-block: var(--#{v.$prefix}navbar-toggler-line-height);
+            }
+        }
+
+
+        &.open {
+            rotate: 180deg;
+
+            .navbar__toggler-line-mid {
+                opacity: 0;
+            }
+
+            .navbar__toggler-line-top {
+                translate: 0 calc(var(--#{v.$prefix}navbar-toggler-line-height) * 2);
+                rotate: 45deg;
+            }
+            .navbar__toggler-line-bot {
+                translate: 0 calc(var(--#{v.$prefix}navbar-toggler-line-height) * -2);
+                rotate: -45deg;
+            }
         }
     }
 
