@@ -42,7 +42,7 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-a:not(.btn) {
+a {
   --#{v.$prefix}text-opacity: 1;
   text-decoration: none;
   color: rgba(var(--#{v.$prefix}link-color-rbg), var(--#{v.$prefix}text-opacity));

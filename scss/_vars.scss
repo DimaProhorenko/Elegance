@@ -122,6 +122,7 @@ $form-colors-rgb: f.map-loop($form-colors, toRgb);
 // Body
 $body-color:                $gray-900 !default;
 $body-bg:                   $gray-200 !default;
+$body-bg-secondary:         $gray-300;
 
 $body-emphasis-color:       $black !default;
 
@@ -238,13 +239,13 @@ $form-control-fs: 1rem;
 $form-control-padding-inline: 1.5rem;
 $form-control-padding-block: .5rem;
 $form-control-color: var(--#{$prefix}body-color);
-$form-control-bg: transparent;
+$form-control-bg: var(--#{$prefix}body-bg);
 $form-control-border: 1px solid var(--#{$prefix}form-control-border);
 $form-control-border-radius: 8px;
 $form-control-shadow-color: rgba($primary, .25);
 $form-control-shadow: 0 0 0 .25rem transparent;
 $form-control-focus-shadow: 0 0 0 .25rem $form-control-shadow-color;
-$form-control-placeholder-color: var(--#{$prefix}dark);
+$form-control-placeholder-color: var(--#{$prefix}body-color);
 
 $form-control-fs-sm: $fs-sm;
 $form-control-fs-lg: $fs-lg;
@@ -316,3 +317,20 @@ $badge-font-size: .75em;
 $badge-color: $light;
 $badge-bg: $gray-600;
 $badge-border-radius: 10px;
+
+
+// Navbar
+$navbar-padding-inline: 0;
+$navbar-padding-block: 1.5rem;
+$navbar-bg: var(--#{$prefix}body-bg-secondary);
+
+$navbar-brand-color: inherit;
+$navbar-brand-hover-color: var(--#{$prefix}primary);
+$navbar-brand-size: 1.5rem;
+
+$navbar-link-hover-color: var(--#{$prefix}primary);
+$navbar-link-mobile-size: 1.4rem;
+$navbar-link-expanded-size: 1rem;
+$navbar-link-padding-inline: .35rem;
+
+$navbar-li-me: .25em;

@@ -16,6 +16,7 @@
     &.active {
         $hover-bg: f.pickColor($bg, f.tint-color($bg, 20), f.shade-color($bg, 20), 70);
         background-color: $hover-bg;
+        text-decoration: none;
     }
 }
 

@@ -75,6 +75,7 @@
         &:hover,
         &.active,
         .btn--check + &:hover {
+            text-decoration: none;
             filter: brightness(1.2);
         }
         .btn--check:checked + & {

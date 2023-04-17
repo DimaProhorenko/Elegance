@@ -39,6 +39,10 @@
 
     --#{v.$prefix}body-color: #{v.$body-color};
     --#{v.$prefix}body-bg: #{v.$body-bg};
+    --#{v.$prefix}body-bg-secondary: #{v.$body-bg-secondary};
+
+
+
     --#{v.$prefix}link-color: #{v.$link-color};
     --#{v.$prefix}link-color-rbg: #{v.$link-color-rgb};
 
@@ -65,5 +69,6 @@
     }
 
     --#{v.$prefix}body-bg: #{vd.$body-bg-dark};
+    --#{v.$prefix}body-bg-secondary: #{vd.$body-bg-secondary-dark};
     --#{v.$prefix}body-color: #{vd.$body-color};
 }
