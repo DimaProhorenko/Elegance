@@ -1,0 +1,7 @@
+@use './vars' as v;
+
+.collapse {
+    transition: max-height 300ms ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}

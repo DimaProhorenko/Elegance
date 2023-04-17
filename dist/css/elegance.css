@@ -1640,6 +1640,12 @@ select {
   background: var(--ek-gradient) !important;
 }
 
+.collapse {
+  transition: max-height 300ms ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -2114,6 +2120,7 @@ select {
 }
 .card__title {
   font-size: 1.5625rem;
+  margin-block-end: 0.5em;
 }
 .card__subtitle {
   font-weight: 500;
