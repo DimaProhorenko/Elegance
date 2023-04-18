@@ -23,22 +23,41 @@ const collapseElList = document.querySelectorAll('.collapse');
 const collapseTogglers = document.querySelectorAll('[data-ek-toggle]');
 
 
+const resetCollapse = (collapseEl) => {
+    collapseEl.classList.remove('show');
+    collapseEl.style.maxHeight = null;
+}
+
 collapseToggleHandler = e => {
-    if (e.target.tagName === 'A') e.preventDefault();
+    const clickedEl = e.target;
+    if (clickedEl.tagName === 'A') e.preventDefault();
 
 
-    const target = e.target.dataset.ekTarget || '#' + e.target.href.split('#')[1];
+
+    const target = clickedEl.dataset.ekTarget || '#' + clickedEl.href.split('#')[1];
 
     const targetCollapse = document.querySelector(target);
 
-    if (e.target.classList.contains('navbar__toggler')) e.target.classList.toggle('open');
+    if (clickedEl.classList.contains('navbar__toggler')) clickedEl.classList.toggle('open');
     
     if (targetCollapse.classList.contains('show')) {
-        targetCollapse.classList.remove('show');
-        targetCollapse.style.maxHeight = null;
+        clickedEl.classList.remove('collapse-show');
+        resetCollapse(targetCollapse);
     } else {
+        const collapseParent = document.querySelector(`${targetCollapse.dataset.ekParent}`);
+        const openedCollapses = collapseParent?.querySelectorAll('.collapse.show');
+        const openedCollapsesTogglers = collapseParent?.querySelectorAll('.collapse-show');
+        openedCollapsesTogglers.forEach(el => el.classList.remove('collapse-show'));
+        clickedEl.classList.add('collapse-show');
+        console.log(openedCollapsesTogglers);
+        if (openedCollapses) {
+            openedCollapses.forEach(collapse => {
+                resetCollapse(collapse);
+            })
+        }
+        
         targetCollapse.classList.add('show');
-        targetCollapse.style.maxHeight = targetCollapse.scrollHeight + 'px';
+        targetCollapse.style.maxHeight = targetCollapse.scrollHeight + 2 + 'px';
     }
 
     

@@ -213,7 +213,7 @@ $utilities: map-merge(
         "margin": (
             property: margin,
             class: m,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
         ),
         "margin-y": (
             property: margin-block,
@@ -224,7 +224,7 @@ $utilities: map-merge(
         "margin-x": (
             property: margin-inline,
             class: mx,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
             
         ),
         "margin-top": (
@@ -242,18 +242,18 @@ $utilities: map-merge(
         "margin-left": (
             property: margin-inline-start,
             class: ml,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
         ),
         "margin-right": (
             property: margin-inline-end,
             class: mr,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
             
         ),
         "padding": (
             property: padding,
             class: p,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
         ),
         "padding-y": (
             property: padding-block,
@@ -264,7 +264,7 @@ $utilities: map-merge(
         "padding-x": (
             property: padding-inline,
             class: px,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
         ),
         "padding-top": (
             property: padding-block-start,
@@ -280,13 +280,13 @@ $utilities: map-merge(
         "padding-left": (
             property: padding-inline-start,
             class: pl,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
             
         ),
         "padding-right": (
             property: padding-inline-end,
             class: pr,
-            values: v.$spacers,
+            values: map-merge(v.$spacers, ('auto': auto)),
             
         ),
         "font-size": (

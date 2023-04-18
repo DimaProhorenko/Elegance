@@ -1,0 +1,80 @@
+@use './vars' as v;
+
+.accordion {
+    --#{v.$prefix}acdn-padding-inline: #{v.$acdn-padding-inline};
+    --#{v.$prefix}acdn-padding-block: #{v.$acdn-padding-block};
+    --#{v.$prefix}acdn-color: #{v.$acdn-color};
+    --#{v.$prefix}acdn-bg: #{v.$acdn-bg};
+    --#{v.$prefix}acdn-border-width: #{v.$acdn-border-width};
+    --#{v.$prefix}acdn-border-color: #{v.$acdn-border-color};
+
+    --#{v.$prefix}acdn-focus-bg: #{v.$acdn-focus-bg};
+    --#{v.$prefix}acdn-focus-color: #{v.$acdn-focus-color};
+
+
+    &__item {
+        background-color: var(--#{v.$prefix}acdn-bg);
+        border: var(--#{v.$prefix}acdn-border-width) solid var(--#{v.$prefix}acdn-border-color);
+        overflow: hidden;
+
+        &:first-of-type {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        &:last-of-type {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+
+    &__header {
+        transition-property: color, background-color, box-shadow;
+        transition-duration: v.$transition-duration;
+        transition-timing-function: v.$transition-easing;
+    }
+
+    &__header,
+    &__body {
+        box-shadow: 0 0 20px transparent;
+    }
+
+    &__btn,
+    &__body {
+        padding-inline: var(--#{v.$prefix}acdn-padding-inline);
+        padding-block: var(--#{v.$prefix}acdn-padding-block);
+    }
+
+    &__btn {
+        display: block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+
+        &::after {
+            content: '\2193';
+            display: block;
+            width: var(--#{v.$prefix}acdn-icon-size);
+            height: var(--#{v.$prefix}acdn-icon-size);
+            background-size: var(--#{v.$prefix}acdn-icon-size) var(--#{v.$prefix}acdn-icon-size);
+            background-repeat: no-repeat;
+            background-image: var(--#{v.$prefix}acdn-icon-url);
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            translate: 0 -50%;
+            rotate: 0;
+            transition-property: color, rotate;
+            transition-duration: v.$transition-duration;
+            transition-timing-function: v.$transition-easing;
+        }
+
+        &.collapse-show {
+            background-color: var(--#{v.$prefix}acdn-focus-bg);
+            color: var(--#{v.$prefix}acdn-focus-color);
+
+            &::after {
+                rotate: 180deg;
+            }
+        }
+    }
+}

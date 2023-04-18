@@ -37,9 +37,13 @@
         --#{v.$prefix + $color}-rgb: #{$value};
     }
 
+    @each $color, $value in v.$bgs {
+        --#{v.$prefix + $color}: #{$value};
+    }
+
     --#{v.$prefix}body-color: #{v.$body-color};
-    --#{v.$prefix}body-bg: #{v.$body-bg};
-    --#{v.$prefix}body-bg-secondary: #{v.$body-bg-secondary};
+    // --#{v.$prefix}body-bg: #{v.$body-bg};
+    // --#{v.$prefix}body-bg-secondary: #{v.$body-bg-secondary};
 
 
 
@@ -68,7 +72,11 @@
         --#{v.$prefix + $color}: #{$value};
     }
 
-    --#{v.$prefix}body-bg: #{vd.$body-bg-dark};
-    --#{v.$prefix}body-bg-secondary: #{vd.$body-bg-secondary-dark};
+    @each $color, $value in vd.$bgs {
+        --#{v.$prefix + $color}: #{$value};
+    }
+
+    // --#{v.$prefix}body-bg: #{vd.$body-bg-dark};
+    // --#{v.$prefix}body-bg-secondary: #{vd.$body-bg-secondary-dark};
     --#{v.$prefix}body-color: #{vd.$body-color};
 }

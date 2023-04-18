@@ -2,8 +2,15 @@
 @use './functions' as f;
 
 $body-bg-dark: #212529;
+$body-bg-primary-subtle-dark: #031633;
 $body-bg-secondary-dark: v.$gray-800;
 $body-color: #fafafa;
+
+$bgs: (
+    body-bg: $body-bg-dark,
+    body-bg-primary-subtle: $body-bg-primary-subtle-dark,
+    body-bg-secondary: $body-bg-secondary-dark
+);
 
 
 $primary-dark: f.tint-color(v.$primary, v.$dark-tint-val);

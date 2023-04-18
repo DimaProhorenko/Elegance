@@ -122,7 +122,14 @@ $form-colors-rgb: f.map-loop($form-colors, toRgb);
 // Body
 $body-color:                $gray-900 !default;
 $body-bg:                   $gray-200 !default;
+$body-bg-primary-subtle: #cfe2ff;
 $body-bg-secondary:         $gray-300;
+
+$bgs: (
+    body-bg: $body-bg,
+    body-bg-primary-subtle: $body-bg-primary-subtle,
+    body-bg-secondary: $body-bg-secondary
+);
 
 $body-emphasis-color:       $black !default;
 
@@ -340,3 +347,17 @@ $navbar-toggler-height: $navbar-toggler-width;
 $navbar-toggler-line-width: f.toRem(20);
 $navbar-toggler-line-height: f.toRem(3);
 $navbar-toggler-line-bg: var(--#{$prefix}body-color);
+
+
+// Accordion (acdn);
+$acdn-padding-inline: 1em;
+$acdn-padding-block: 1em;
+$acdn-border-width: 1px;
+$acdn-border-color: var(--#{$prefix}base-3);
+$acdn-bg: transparent;
+$acdn-color: var(--#{$prefix}body-color);
+
+$acdn-icon-size: 20px;
+
+$acdn-focus-bg: var(--#{$prefix}body-bg-primary-subtle);
+$acdn-focus-color: var(--#{$prefix}primary);

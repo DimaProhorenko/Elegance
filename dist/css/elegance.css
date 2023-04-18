@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "EK-Poppins";
   font-weight: 300;
@@ -87,9 +88,10 @@
   --ek-form-invalid-color: #ea868f;
   --ek-form-control-border-rgb: 52, 58, 64;
   --ek-form-invalid-color-rgb: 234, 134, 143;
-  --ek-body-color: #212529;
   --ek-body-bg: #e9ecef;
+  --ek-body-bg-primary-subtle: #cfe2ff;
   --ek-body-bg-secondary: #dee2e6;
+  --ek-body-color: #212529;
   --ek-link-color: #004fed;
   --ek-link-color-rbg: 0, 79, 237;
   --ek-form-control-border-color: #adb5bd;
@@ -117,6 +119,7 @@
   --ek-base-3: #6c757d;
   --ek-base-4: #212529;
   --ek-body-bg: #212529;
+  --ek-body-bg-primary-subtle: #031633;
   --ek-body-bg-secondary: #343a40;
   --ek-body-color: #fafafa;
 }
@@ -186,6 +189,16 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+button {
+  display: inline-block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
@@ -632,6 +645,10 @@ select {
   margin: 3rem !important;
 }
 
+.m-auto {
+  margin: auto !important;
+}
+
 .my-0 {
   margin-block: 0 !important;
 }
@@ -678,6 +695,10 @@ select {
 
 .mx-5 {
   margin-inline: 3rem !important;
+}
+
+.mx-auto {
+  margin-inline: auto !important;
 }
 
 .mt-0 {
@@ -752,6 +773,10 @@ select {
   margin-inline-start: 3rem !important;
 }
 
+.ml-auto {
+  margin-inline-start: auto !important;
+}
+
 .mr-0 {
   margin-inline-end: 0 !important;
 }
@@ -776,6 +801,10 @@ select {
   margin-inline-end: 3rem !important;
 }
 
+.mr-auto {
+  margin-inline-end: auto !important;
+}
+
 .p-0 {
   padding: 0 !important;
 }
@@ -798,6 +827,10 @@ select {
 
 .p-5 {
   padding: 3rem !important;
+}
+
+.p-auto {
+  padding: auto !important;
 }
 
 .py-0 {
@@ -846,6 +879,10 @@ select {
 
 .px-5 {
   padding-inline: 3rem !important;
+}
+
+.px-auto {
+  padding-inline: auto !important;
 }
 
 .pt-0 {
@@ -920,6 +957,10 @@ select {
   padding-inline-start: 3rem !important;
 }
 
+.pl-auto {
+  padding-inline-start: auto !important;
+}
+
 .pr-0 {
   padding-inline-end: 0 !important;
 }
@@ -942,6 +983,10 @@ select {
 
 .pr-5 {
   padding-inline-end: 3rem !important;
+}
+
+.pr-auto {
+  padding-inline-end: auto !important;
 }
 
 .fs-sm {
@@ -4274,4 +4319,70 @@ select {
     padding-inline: var(--ek-navbar-link-padding-inline);
     font-size: var(--ek-navbar-link-expanded-size);
   }
+}
+
+.accordion {
+  --ek-acdn-padding-inline: 1em;
+  --ek-acdn-padding-block: 1em;
+  --ek-acdn-color: var(--ek-body-color);
+  --ek-acdn-bg: transparent;
+  --ek-acdn-border-width: 1px;
+  --ek-acdn-border-color: var(--ek-base-3);
+  --ek-acdn-focus-bg: var(--ek-body-bg-primary-subtle);
+  --ek-acdn-focus-color: var(--ek-primary);
+}
+.accordion__item {
+  background-color: var(--ek-acdn-bg);
+  border: var(--ek-acdn-border-width) solid var(--ek-acdn-border-color);
+  overflow: hidden;
+}
+.accordion__item:first-of-type {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.accordion__item:last-of-type {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.accordion__header {
+  transition-property: color, background-color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.accordion__header, .accordion__body {
+  box-shadow: 0 0 20px transparent;
+}
+.accordion__btn, .accordion__body {
+  padding-inline: var(--ek-acdn-padding-inline);
+  padding-block: var(--ek-acdn-padding-block);
+}
+.accordion__btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+.accordion__btn::after {
+  content: "↓";
+  display: block;
+  width: var(--ek-acdn-icon-size);
+  height: var(--ek-acdn-icon-size);
+  background-size: var(--ek-acdn-icon-size) var(--ek-acdn-icon-size);
+  background-repeat: no-repeat;
+  background-image: var(--ek-acdn-icon-url);
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  translate: 0 -50%;
+  rotate: 0;
+  transition-property: color, rotate;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.accordion__btn.collapse-show {
+  background-color: var(--ek-acdn-focus-bg);
+  color: var(--ek-acdn-focus-color);
+}
+.accordion__btn.collapse-show::after {
+  rotate: 180deg;
 }
