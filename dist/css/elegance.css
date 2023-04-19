@@ -4372,7 +4372,7 @@ button {
   background-image: var(--ek-acdn-icon-url);
   position: absolute;
   top: 50%;
-  right: 10%;
+  right: var(--ek-acdn-padding-inline);
   translate: 0 -50%;
   rotate: 0;
   transition-property: color, rotate;
