@@ -67,3 +67,23 @@ collapseToggleHandler = e => {
 if (collapseTogglers) {
     collapseTogglers.forEach(toggler => toggler.addEventListener('click', collapseToggleHandler));
 }
+
+
+// Dismiss
+
+const dismissTriggers = document.querySelectorAll('[data-ek-dismiss]');
+console.log(dismissTriggers);
+
+const dismissHandler = e => {
+    const target = e.target;
+    const dismissType = target.dataset.ekDismiss;
+
+    if (dismissType === 'modal') {
+        const modal = target.closest('.modal');
+        modal?.classList.remove('show');
+    }
+}
+
+if (dismissTriggers) {
+    dismissTriggers.forEach(trigger => trigger.addEventListener('click', dismissHandler));
+}

@@ -1,0 +1,58 @@
+@use './vars' as v;
+
+.close-btn {
+    --#{v.$prefix}close-size: #{v.$close-size};
+    --#{v.$prefix}close-shadow-color: #{v.$close-shadow-color};
+    --#{v.$prefix}close-shadow: #{v.$close-shadow};
+
+    --#{v.$prefix}close-line-height: #{v.$close-line-height};
+    --#{v.$prefix}close-line-width: #{v.$close-line-width};
+    --#{v.$prefix}close-line-color: #{v.$close-line-color};
+
+    width: var(--#{v.$prefix}close-size);
+    height: var(--#{v.$prefix}close-size);
+    position: relative;
+    opacity: .6;
+    border-radius: 8px;
+    box-shadow: 0 0 0 transparent;
+
+    transition-property: opacity, box-shadow;
+    transition-duration: v.$transition-duration;
+    transition-timing-function: v.$transition-easing;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        width: var(--#{v.$prefix}close-line-width);
+        height: var(--#{v.$prefix}close-line-height);
+        background-color: var(--#{v.$prefix}close-line-color);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &::before {
+        rotate: -45deg;
+    }
+
+    &::after {
+        rotate: 45deg;
+    }
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+
+    &:focus {
+        box-shadow: var(--#{v.$prefix}close-shadow);
+    }
+
+
+
+    &--sm {
+        --#{v.$prefix}close-size: #{v.$close-size-sm};
+    }
+}

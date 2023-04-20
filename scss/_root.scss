@@ -21,6 +21,13 @@
         --#{v.$prefix}#{$color}-rgb: #{$value};
     }
 
+    @each $color, $value in v.$gray-colors {
+        --#{v.$prefix}#{$color}: #{$value};
+    }
+    @each $color, $value in v.$gray-colors-rgb {
+        --#{v.$prefix}#{$color}-rgb: #{$value};
+    }
+
     @each $color, $value in v.$text-colors {
         --#{v.$prefix}#{$color}: #{$value};
     }
@@ -72,8 +79,20 @@
         --#{v.$prefix + $color}: #{$value};
     }
 
+    @each $color, $value in vd.$text-colors-dark-rgb {
+        --#{v.$prefix + $color}-rgb: #{$value};
+    }
+
     @each $color, $value in vd.$bgs {
         --#{v.$prefix + $color}: #{$value};
+    }
+
+    @each $color, $value in vd.$gray-colors-dark {
+        --#{v.$prefix}#{$color}: #{$value};
+    }
+
+    @each $color, $value in vd.$gray-colors-dark-rgb {
+        --#{v.$prefix}#{$color}-rgb: #{$value};
     }
 
     // --#{v.$prefix}body-bg: #{vd.$body-bg-dark};

@@ -43,3 +43,18 @@ $text-colors-dark: (
 ) !default;
 
 $theme-colors-dark-rgb: f.map-loop($theme-colors-dark, toRgb);
+$text-colors-dark-rgb: f.map-loop($text-colors-dark, toRgb);
+
+$gray-colors-dark: (
+    gray-100: v.$gray-900,
+    gray-200: v.$gray-800,
+    gray-300: v.$gray-700,
+    gray-400: v.$gray-600,
+    gray-500: v.$gray-500,
+    gray-600: v.$gray-400,
+    gray-700: v.$gray-300,
+    gray-800: v.$gray-200,
+    gray-900: v.$gray-100,
+);
+
+$gray-colors-dark-rgb: f.map-loop($gray-colors-dark, toRgb);

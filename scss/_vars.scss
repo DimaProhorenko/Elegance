@@ -23,6 +23,20 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$gray-colors: (
+    gray-100: $gray-100,
+    gray-200: $gray-200,
+    gray-300: $gray-300,
+    gray-400: $gray-400,
+    gray-500: $gray-500,
+    gray-600: $gray-600,
+    gray-700: $gray-700,
+    gray-800: $gray-800,
+    gray-900: $gray-900,
+);
+
+$gray-colors-rgb: f.map-loop($gray-colors, toRgb);
+
 // Color variables
 $blue:       #004fed !default;
 $indigo:  #7420b9 !default;
@@ -107,6 +121,7 @@ $text-colors: (
     
 ) !default;
 
+
 $text-colors-rgb: f.map-loop($text-colors, toRgb);
 
 // Form colors
@@ -137,6 +152,8 @@ $body-emphasis-color:       $black !default;
 // Gradient
 $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 
+$shadow-color: rgba(var(--#{$prefix}primary-rgb), .25);
+$shadow: 0 0 0 .25rem $shadow-color;
 
 // Grid
 $grid-breakpoints: (
@@ -361,3 +378,28 @@ $acdn-icon-size: 20px;
 
 $acdn-focus-bg: var(--#{$prefix}body-bg-primary-subtle);
 $acdn-focus-color: var(--#{$prefix}primary);
+
+
+
+// Modal
+$modal-backdrop-bg: rgba(0, 0, 0, .65);
+$modal-pt: 2rem;
+$modal-border-color: rgba(var(--#{$prefix}gray-700-rgb), .15);
+
+$modal-dialog-bg: var(--#{$prefix}body-bg);
+$modal-dialog-mw: f.toRem(500);
+$modal-dialog-padding-x: 1em;
+$modal-dialog-padding-y: $modal-dialog-padding-x;
+
+
+
+// Close btn
+$close-size: f.toRem(30);
+$close-shadow-color: $shadow-color;
+$close-shadow: 0 0 0 .25rem var(--#{$prefix}close-shadow-color);;
+
+$close-line-height: 3px;
+$close-line-width: calc(var(--#{$prefix}close-size) * .8);
+$close-line-color: var(--#{$prefix}body-color);
+
+$close-size-sm: f.toRem(22);

@@ -1,0 +1,64 @@
+@use './vars' as v;
+
+.modal {
+    --#{v.$prefix}modal-backdrop-bg: #{v.$modal-backdrop-bg};
+    --#{v.$prefix}modal-pt: #{v.$modal-pt};
+    --#{v.$prefix}modal-border-color: #{v.$modal-border-color};
+
+    --#{v.$prefix}modal-dialog-bg: #{v.$modal-dialog-bg};
+    --#{v.$prefix}modal-dialog-mw: #{v.$modal-dialog-mw};
+    --#{v.$prefix}modal-dialog-padding-x: #{v.$modal-dialog-padding-x};
+    --#{v.$prefix}modal-dialog-padding-y: #{v.$modal-dialog-padding-y};
+
+
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+
+    position: fixed;
+    inset: 0;
+    padding-block-start: var(--#{v.$prefix}modal-pt);
+
+    background-color: var(--#{v.$prefix}modal-backdrop-bg);
+
+    &__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    &__dialog {
+        width: 100%;
+        max-width: var(--#{v.$prefix}modal-dialog-mw);
+        margin-inline: auto;
+
+        background-color: var(--#{v.$prefix}modal-dialog-bg);
+
+        border: 1px solid var(--#{v.$prefix}modal-border-color);
+        border-radius: 10px;
+
+        & > *:not(:last-child) {
+            border-bottom: inherit;
+        }
+    }
+
+    &__header,
+    &__body,
+    &__footer {
+        padding-inline: var(--#{v.$prefix}modal-dialog-padding-x);
+        padding-block: var(--#{v.$prefix}modal-dialog-padding-y);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &.show {
+        display: block;
+        opacity: 1;
+        pointer-events: all;
+    }
+}

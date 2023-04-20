@@ -76,7 +76,8 @@
         &.active,
         .btn--check + &:hover {
             text-decoration: none;
-            filter: brightness(1.2);
+            background-color: $value;
+            color: f.pickColor($value, v.$white, v.$black);
         }
         .btn--check:checked + & {
             background-color: #{$value};
