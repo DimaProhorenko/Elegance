@@ -9,6 +9,11 @@
     margin-inline: auto;
 }
 
+.body-no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
 @each $key, $value in u.$utilities {
     @include gu.generate-utility($value);
 }

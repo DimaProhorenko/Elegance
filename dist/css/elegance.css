@@ -263,6 +263,11 @@ button {
   margin-inline: auto;
 }
 
+.body-no-scroll {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .align-baseline {
   vertical-align: baseline !important;
 }

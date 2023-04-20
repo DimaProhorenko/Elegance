@@ -20,23 +20,36 @@ if (form) {
 }
 
 const collapseElList = document.querySelectorAll('.collapse');
-const collapseTogglers = document.querySelectorAll('[data-ek-toggle]');
+const toggleEls = document.querySelectorAll('[data-ek-toggle]');
 
+
+
+const toggleHandler = e => {
+    const clickedEl = e.target;
+    if (clickedEl.tagName === 'A') e.preventDefault();
+
+
+
+    const targetQuery = clickedEl.dataset.ekTarget || '#' + clickedEl.href.split('#')[1];
+    const toggleType = clickedEl.dataset.ekToggle;
+    const target = document.querySelector(targetQuery);
+    console.log(target);
+
+    console.log(toggleType);
+
+    if (toggleType === 'collapse') {
+        collapseToggleHandler(clickedEl, target);
+    } else if (toggleType === 'modal') {
+        modalToggleHandler(target);
+    }
+}
 
 const resetCollapse = (collapseEl) => {
     collapseEl.classList.remove('show');
     collapseEl.style.maxHeight = null;
 }
 
-collapseToggleHandler = e => {
-    const clickedEl = e.target;
-    if (clickedEl.tagName === 'A') e.preventDefault();
-
-
-
-    const target = clickedEl.dataset.ekTarget || '#' + clickedEl.href.split('#')[1];
-
-    const targetCollapse = document.querySelector(target);
+collapseToggleHandler = (clickedEl, targetCollapse) => {
 
     if (clickedEl.classList.contains('navbar__toggler')) clickedEl.classList.toggle('open');
     
@@ -47,7 +60,7 @@ collapseToggleHandler = e => {
         const collapseParent = document.querySelector(`${targetCollapse.dataset.ekParent}`);
         const openedCollapses = collapseParent?.querySelectorAll('.collapse.show');
         const openedCollapsesTogglers = collapseParent?.querySelectorAll('.collapse-show');
-        openedCollapsesTogglers.forEach(el => el.classList.remove('collapse-show'));
+        openedCollapsesTogglers?.forEach(el => el.classList.remove('collapse-show'));
         clickedEl.classList.add('collapse-show');
         console.log(openedCollapsesTogglers);
         if (openedCollapses) {
@@ -63,27 +76,32 @@ collapseToggleHandler = e => {
     
 }
 
+const modalToggleHandler = (targetModal) => {
+    targetModal.classList.toggle('show');
 
-if (collapseTogglers) {
-    collapseTogglers.forEach(toggler => toggler.addEventListener('click', collapseToggleHandler));
-}
-
-
-// Dismiss
-
-const dismissTriggers = document.querySelectorAll('[data-ek-dismiss]');
-console.log(dismissTriggers);
-
-const dismissHandler = e => {
-    const target = e.target;
-    const dismissType = target.dataset.ekDismiss;
-
-    if (dismissType === 'modal') {
-        const modal = target.closest('.modal');
-        modal?.classList.remove('show');
+    if (targetModal.classList.contains('show')) {
+        document.body.classList.add('body-no-scroll');
+    } else {
+        document.body.classList.remove('body-no-scroll');
     }
 }
 
-if (dismissTriggers) {
-    dismissTriggers.forEach(trigger => trigger.addEventListener('click', dismissHandler));
+
+if (toggleEls) {
+    toggleEls.forEach(toggler => toggler.addEventListener('click', toggleHandler));
 }
+
+
+const dismissTogglers = document.querySelectorAll('[data-ek-dismiss]');
+
+
+const dismissHandler = e => {
+    const type = e.target.dataset.ekDismiss;
+
+    if (type === 'modal') {
+        const modal = e.target.closest('.modal');
+        modalToggleHandler(modal);
+    }
+}
+
+dismissTogglers.forEach(el => el.addEventListener('click', dismissHandler));
