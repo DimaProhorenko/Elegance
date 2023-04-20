@@ -403,3 +403,14 @@ $close-line-width: calc(var(--#{$prefix}close-size) * .8);
 $close-line-color: var(--#{$prefix}body-color);
 
 $close-size-sm: f.toRem(22);
+
+
+// Dropdown
+$dd-color: var(--#{$prefix}body-color);
+$dd-bg: var(--#{$prefix}body-bg-secondary);
+$dd-padding-inline: 1rem;
+$dd-padding-block: $dd-padding-inline;
+$dd-border-color: rgba(var(--#{$prefix}gray-700-rgb), .15);
+$dd-border-radius: 8px;
+
+$dd-hover-bg: rgba(var(--#{$prefix}body-bg));

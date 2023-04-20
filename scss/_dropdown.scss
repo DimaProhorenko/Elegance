@@ -1,0 +1,55 @@
+@use './vars' as v;
+
+.dropdown {
+    --#{v.$prefix}dd-color: #{v.$dd-color};
+    --#{v.$prefix}dd-bg: #{v.$dd-bg};
+    --#{v.$prefix}dd-padding-inline: #{v.$dd-padding-inline};
+    --#{v.$prefix}dd-padding-block: #{v.$dd-padding-block};
+    --#{v.$prefix}dd-border-color: #{v.$dd-border-color};
+    --#{v.$prefix}dd-border-radius: #{v.$dd-border-radius};
+    --#{v.$prefix}dd-hover-color: var(--#{v.$prefix}dd-hover-color);
+
+
+    position: relative;
+
+    &:focus-within {
+        .dropdown__menu {
+            display: block;
+        }
+    }
+
+
+    &__menu {
+        position: absolute;
+        top: calc(100% + 5px);
+        left: 0;
+
+        border: 1px solid var(--#{v.$prefix}dd-border-color);
+        border-radius: var(--#{v.$prefix}db-border-radius);
+        padding-inline: var(--#{v.$prefix}dd-padding-inline);
+        padding-block: var(--#{v.$prefix}dd-padding-block);
+
+        width: max-content;
+        background-color: var(--#{v.$prefix}dd-bg);
+
+        display: none;
+
+        & > li + li {
+            margin-block-start: .5em;
+        }
+    }
+
+    &__item {
+        padding: .25em;
+        color: var(--#{v.$prefix}dd-color);
+
+        &:hover {
+            background-color: var(--#{v.$prefix}dd-hover-color);
+        }
+    }
+
+    &__toggle {
+
+
+    }
+}
