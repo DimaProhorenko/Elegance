@@ -7,6 +7,8 @@
     --#{v.$prefix}dd-padding-block: #{v.$dd-padding-block};
     --#{v.$prefix}dd-border-color: #{v.$dd-border-color};
     --#{v.$prefix}dd-border-radius: #{v.$dd-border-radius};
+    --#{v.$prefix}dd-z-index: #{v.$dd-border-radius};
+
     --#{v.$prefix}dd-hover-color: var(--#{v.$prefix}dd-hover-color);
 
 
@@ -23,9 +25,10 @@
         position: absolute;
         top: calc(100% + 5px);
         left: 0;
+        z-index: var(--#{v.$prefix}dd-z-index);
 
         border: 1px solid var(--#{v.$prefix}dd-border-color);
-        border-radius: var(--#{v.$prefix}db-border-radius);
+        border-radius: var(--#{v.$prefix}dd-border-radius);
         padding-inline: var(--#{v.$prefix}dd-padding-inline);
         padding-block: var(--#{v.$prefix}dd-padding-block);
 
@@ -48,8 +51,13 @@
         }
     }
 
-    &__toggle {
+    &__btn {
+        position: relative;
 
-
+        &::after {
+            content: '\2193';
+            display: inline-block;
+            margin-inline-start: 1em;
+        }
     }
 }

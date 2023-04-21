@@ -2,26 +2,35 @@
 @use '../functions' as f;
 
 @mixin button-variant(
+    $bg-name,
     $bg,
     $clr,
     $clr-dark,
     $hover-bg,
     $border: null,
 ) {
-    background-color: $bg;
-    color: f.pickColor($bg, $clr, $clr-dark);
+    --#{v.$prefix}btn-bg: var(--#{v.$prefix + $bg-name});
+    // --#{v.$prefix}btn-color: #{f.pickColor($bg, $clr, $clr-dark)};
+    @if ($bg-name == 'warning') {
+        --#{v.$prefix}btn-color: #{$clr-dark};
+    } @else {
+        --#{v.$prefix}btn-color: #{$clr};
+    }
+   
+    // background-color: $bg;
+    // color: f.pickColor($bg, $clr, $clr-dark);
     border: $border;
 
     &:hover,
     &.active {
-        $hover-bg: f.pickColor($bg, f.tint-color($bg, 20), f.shade-color($bg, 20), 70);
-        background-color: $hover-bg;
+        // opacity: .75;
+        filter: brightness(1.15);
         text-decoration: none;
     }
 }
 
 @mixin button-size($fs, $padding-inline, $padding-block) {
-    font-size: $fs;
-    padding-inline: $padding-inline;
-    padding-block: $padding-block;
+    --#{v.$prefix}btn-fs: #{$fs};
+    --#{v.$prefix}btn-padding-inline: #{$padding-inline};
+    --#{v.$prefix}btn-padding-block: #{$padding-block};
 }

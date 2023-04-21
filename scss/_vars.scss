@@ -5,7 +5,7 @@
 // Should follow the "$component-state-property-size" formula
 
 $prefix: ek-;
-$dark-tint-val: 60;
+$dark-tint-val: 30;
 
 $transition-duration: 300ms;
 $transition-easing: ease-in-out;
@@ -239,17 +239,21 @@ $card-shadow: 5px 5px 20px $card-shadow-color;
 $btn-padding-inline: 1.5rem;
 $btn-padding-block: .75rem;
 $btn-bg: transparent;
+$btn-border-color: transparent;
 $btn-border-radius: .5em;
-$btn-color: var(--#{$prefix}dark);
+$btn-color: var(--#{$prefix}body-color);
 $btn-fs: 1rem;
 $btn-box-shadow: 4px 4px 15px rgba(0, 0, 0, .15);
+$btn-hover-bg: transparent;
+$btn-hover-color: var(--#{$prefix}primary);
 
 
 $btn-padding-inline-sm: 1rem;
 $btn-padding-block-sm: .5rem;
 $btn-fs-sm: .75rem;
+
 $btn-padding-inline-lg: 1.5rem;
-$btn-padding-block-lg: 1rem;
+$btn-padding-block-lg: .75rem;
 $btn-fs-lg: 1.25rem;
 
 
@@ -412,5 +416,5 @@ $dd-padding-inline: 1rem;
 $dd-padding-block: $dd-padding-inline;
 $dd-border-color: rgba(var(--#{$prefix}gray-700-rgb), .15);
 $dd-border-radius: 8px;
-
+$dd-z-index: 10;
 $dd-hover-bg: rgba(var(--#{$prefix}body-bg));

@@ -4,6 +4,17 @@
 @use './mixins/transition' as t;
 
 .btn {
+    --#{v.$prefix}btn-padding-inline: #{v.$btn-padding-inline};
+    --#{v.$prefix}btn-padding-block: #{v.$btn-padding-block};
+    --#{v.$prefix}btn-bg: #{v.$btn-bg};
+    --#{v.$prefix}btn-color: #{v.$btn-color};
+    --#{v.$prefix}btn-fs: #{v.$btn-fs};
+    --#{v.$prefix}btn-border-color: #{v.$btn-border-color};
+    --#{v.$prefix}btn-border-radius: #{v.$btn-border-radius};
+
+    --#{v.$prefix}hover-bg: #{v.$btn-hover-bg};
+    --#{v.$prefix}hover-color: #{v.$btn-hover-color};
+    
 
     outline: none;
     border: none;
@@ -11,17 +22,17 @@
     display: inline-block;
     text-decoration: none;
 
-    padding-inline: v.$btn-padding-inline;
-    padding-block: v.$btn-padding-block;
+    padding-inline: var(--#{v.$prefix}btn-padding-inline);
+    padding-block: var(--#{v.$prefix}btn-padding-block);
 
-    background-color: v.$btn-bg;
-    border: 1px solid transparent;
-    border-radius: v.$btn-border-radius;
+    background-color: var(--#{v.$prefix}btn-bg);
+    border: 1px solid var(--#{v.$prefix}btn-border-color);
+    border-radius: var(--#{v.$prefix}btn-border-radius);
 
-    color: v.$btn-color;
-    font-size: v.$btn-fs;
+    color: var(--#{v.$prefix}btn-color);
+    font-size: var(--#{v.$prefix}btn-font-size);
 
-    @include t.transition(background-color, v.$transition-duration, v.$transition-easing);
+    @include t.transition(filter, v.$transition-duration, v.$transition-easing);
 
     &--sm {
         @include button.button-size(v.$btn-fs-sm, v.$btn-padding-inline-sm, v.$btn-padding-block-sm);
@@ -58,7 +69,7 @@
 
 @each $key, $value in v.$theme-colors {
     .btn--#{$key} {
-        @include button.button-variant($value, var(--#{v.$prefix}white), var(--#{v.$prefix}black), f.tint-color($value, 30))
+        @include button.button-variant($key, $value, var(--#{v.$prefix}white), var(--#{v.$prefix}black), f.tint-color($value, 30))
     }
 }
 
@@ -66,23 +77,30 @@
 
 @each $key, $value in v.$theme-colors {
     .btn--outline-#{$key} {
-        border-color: $value;
-        color: #{$value};
+        --#{v.$prefix}btn-border-color: var(--#{v.$prefix + $key});
+        --#{v.$prefix}btn-color: var(--#{v.$prefix + $key});
         transition-property: background-color, color;
         transition-duration: v.$transition-duration;
         transition-timing-function: v.$transition-easing;
 
         &:hover,
         &.active,
-        .btn--check + &:hover {
-            text-decoration: none;
-            background-color: $value;
-            color: f.pickColor($value, v.$white, v.$black);
-        }
+        .btn--check + &:hover,
         .btn--check:checked + & {
-            background-color: #{$value};
-            color: f.pickColor($value, v.$white, v.$black);
+            --#{v.$prefix}btn-bg: var(--#{v.$prefix + $key});
+
+            @if ($key == 'warning') {
+                --#{v.$prefix}btn-color: var(--#{v.$prefix}black);
+            } @else {
+                --#{v.$prefix}btn-color: var(--#{v.$prefix}white);
+            }
+
+            text-decoration: none;
         }
+        // .btn--check:checked + & {
+        //     --#{v.$prefix}btn-bg: #{$value};
+        //     --#{v.$prefix}btn-color: f.pickColor($value, v.$white, v.$black);
+        // }
     }
 }
 
@@ -94,12 +112,12 @@
         border-radius: 0;
 
         &:first-of-type {
-            border-top-left-radius: v.$btn-border-radius;
-            border-bottom-left-radius: v.$btn-border-radius;
+            border-top-left-radius: var(--#{v.$prefix}btn-border-radius);
+            border-bottom-left-radius: var(--#{v.$prefix}btn-border-radius);
         }
         &:last-of-type {
-            border-top-right-radius: v.$btn-border-radius;
-            border-bottom-right-radius: v.$btn-border-radius;
+            border-top-right-radius: var(--#{v.$prefix}btn-border-radius);
+            border-bottom-right-radius: var(--#{v.$prefix}btn-border-radius);
         }
     }
 
